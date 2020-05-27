@@ -9,3 +9,7 @@
     max-width: 100%;
     border: 1px solid #ddd;
 }
+
+.modal-question-content img{
+    width: 100%;
+}
