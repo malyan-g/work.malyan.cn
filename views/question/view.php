@@ -9,6 +9,6 @@
 
 use yii\bootstrap\Html;
 ?>
-<div class="modal-content" style="width: 100%">
+<div class="modal-question-content" style="width: 100%">
     <?= $questionAttr->describe ?>
 </div>
