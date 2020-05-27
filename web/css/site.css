@@ -193,3 +193,7 @@ table, img {
     border-bottom: 1px solid #f3f3f3;
     text-align: left;
 }
+
+.modal-content image{
+    width: 100%;
+}
