@@ -70,6 +70,7 @@ class User extends ActiveRecord implements IdentityInterface
     public function beforeSave($insert)
     {
         if($this->isNewRecord){
+            $this->status = 1;
             $this->created_at = time();
         }
 
