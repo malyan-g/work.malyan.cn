@@ -9,4 +9,6 @@
 
 use yii\bootstrap\Html;
 ?>
-<?= $questionAttr->describe ?>
+<div style="width: 100%">
+    <?= $questionAttr->describe ?>
+</div>
