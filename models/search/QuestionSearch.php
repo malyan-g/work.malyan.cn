@@ -29,7 +29,7 @@ class QuestionSearch extends Question
     public function rules()
     {
         return [
-            [['startDate', 'endDate'], 'date', 'format' => 'php:Y-m-d', 'message'=>'{attribute}不符合格式。']
+            [['startDate', 'endDate', 'cate_id'], 'date', 'format' => 'php:Y-m-d', 'message'=>'{attribute}不符合格式。']
         ];
     }
 
@@ -104,6 +104,44 @@ class QuestionSearch extends Question
         if($this->endDate){
             $query->andFilterWhere(['<=', self::tableName() . '.created_at', strtotime($this->endDate) + 86400]);
         }
+
+        $query->andFilterWhere([
+            'cate_id' => $this->cate_id
+        ]);
+
+        return $dataProvider;
+    }
+
+    /**
+     * @param array $params
+     * @return ActiveDataProvider
+     */
+    public function cateSearch(Array $params)
+    {
+        $query = self::find()->joinWith(['cate'])->select(['cate_id', 'count(1) as total']);
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query
+        ]);
+
+        $query->where([self::tableName() . '.status' => 1, QuestionCate::tableName() . '.status' => 1]);
+        $query->groupBy('cate_id')->orderBy(['total' => SORT_DESC]);
+        $this->load($params);
+
+        if(!$this->validate()) {
+            return $dataProvider;
+        }
+
+        // 创建时间
+        if($this->startDate){
+            $query->andFilterWhere(['>=', self::tableName() . '.created_at', strtotime($this->startDate)]);
+        }
+
+        if($this->endDate){
+            $query->andFilterWhere(['<=', self::tableName() . '.created_at', strtotime($this->endDate) + 86400]);
+        }
+
+        $query->andFilterWhere(['>=', self::tableName() . '.created_at', strtotime($this->startDate)]);
 
         return $dataProvider;
     }
