@@ -9,4 +9,4 @@
 
 use yii\bootstrap\Html;
 ?>
-<?= Html::encode($questionAttr->describe) ?>
+<?= $questionAttr->describe ?>
