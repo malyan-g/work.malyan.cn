@@ -9,7 +9,6 @@
 
 use yii\bootstrap\Html;
 ?>
-<?= Html::cssFile('@web/css/comm.css')?>
 <div class="modal-question-content">
     <?= $questionAttr->describe ?>
 </div>
