@@ -52,7 +52,6 @@ class QuestionController extends Controller
      */
     public function actionCateIndex()
     {
-        $this->layout = false;
         $searchModel = new QuestionSearch();
         $dataProvider = $searchModel->cateSearch(Yii::$app->request->queryParams);
         return $this->render('cate-index', [

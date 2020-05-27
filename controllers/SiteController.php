@@ -90,9 +90,9 @@ class SiteController extends Controller
 
     public function actionUserAdd(){
         $model = new User();
-        $model->username = 'maliang';
-        $model->password = 'Mlg@2020';
-        $model->real_name = '马亮';
+        $model->username = 'test';
+        $model->password = '123456';
+        $model->real_name = '测试';
         $model->save();
     }
 }

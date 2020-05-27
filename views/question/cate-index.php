@@ -5,11 +5,9 @@
  * Date: 2020/5/27
  * Time: 10:59
  */
-
 use yii\bootstrap\Html;
-
 ?>
-<?= Html::cssFile('@web/css/comm.css')?>
+
 <div class="question-list">
     <table>
         <tr class="question-title">
