@@ -1,6 +1,6 @@
 <?php
 
-$SYSTEM_CONFIG = parse_ini_file(__DIR__.'/../../systems/work.malyan.cn/SYSTEM_CONFIG') ;
+$SYSTEM_CONFIG = parse_ini_file(__DIR__.'/../../systems/WORK_SYSTEM_CONFIG') ;
 
 // comment out the following two lines when deployed to production
 if(isset($SYSTEM_CONFIG['YII_DEBUG']) &&  $SYSTEM_CONFIG['YII_DEBUG']){
