@@ -22,6 +22,10 @@ class QuestionController extends Controller
         return [
             'upload' => [
                 'class' => 'kucha\ueditor\UEditorAction',
+                'config' => [
+                    "imageUrlPrefix"  => "http://work.malyan.cn",//图片访问路径前缀
+                    "imagePathFormat" => "/upload/image/{yyyy}{mm}{dd}/{time}{rand:6}", //上传保存路径
+                ]
             ]
         ];
     }
@@ -38,6 +42,21 @@ class QuestionController extends Controller
         return $this->render('index', [
             'searchModel' => $searchModel,
             'data' => $data
+        ]);
+    }
+
+    /**
+     * 问题主页
+     * @return string
+     */
+    public function actionCateIndex()
+    {
+        $this->layout = false;
+        $searchModel = new QuestionSearch();
+        $dataProvider = $searchModel->cateSearch(Yii::$app->request->queryParams);
+        return $this->render('cate-index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider
         ]);
     }
 
