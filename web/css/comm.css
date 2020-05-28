@@ -1,6 +1,3 @@
-.question-list{
-}
-
 .question-list table{
     border-spacing: 0;
     border-collapse: collapse;
@@ -14,7 +11,7 @@
     width: 100%;
 }
 
-.question-list{
+.ranking-list{
     list-style:none;
     margin:0;
 }

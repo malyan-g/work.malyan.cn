@@ -18,14 +18,14 @@ JqueryIsa::widget();
 <!-- 列表 -->
 <?= $dataProvider->query->count() ? ListView::widget([
     'dataProvider' => $dataProvider,
-    'layout' => '<ul class="question-list">{items}</ul>{pager}',
+    'layout' => '<ul class="ranking-list">{items}</ul>{pager}',
     'itemView' => function($model){
         $html = '<li class="ranking-content">
-                            <div class="question-title">
+                            <div class="ranking-title">
                                 <span>' . $model->user->real_name . '</span>
                                 <span>' . $model->created_at . '</span>
                             </div>
-                            <div class="question-describe">
+                            <div class="ranking-describe">
                                 ' . $model->attr->describe . '
                             </div>
                         </li>';

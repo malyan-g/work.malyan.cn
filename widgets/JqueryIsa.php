@@ -17,7 +17,7 @@ class JqueryIsa extends Widget
     public function run()
     {
         $js = <<<JS
-            var ias = jQuery.ias({container: ".question-list", item: "li.ranking-content", pagination: ".pagination", next: ".next a"});
+            var ias = jQuery.ias({container: ".ranking-list", item: "li.ranking-content", pagination: ".pagination", next: ".next a"});
             ias.extension(new IASSpinnerExtension());
             ias.extension(new IASNoneLeftExtension({text: ""}));
             ias.extension(new IASPagingExtension());
