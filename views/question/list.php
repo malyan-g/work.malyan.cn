@@ -21,6 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
     'columns' => [
         'id',
         'cate.question_name',
+        'attr.comments',
         'user.real_name',
         'created_at:datetime',
         [

@@ -48,7 +48,7 @@ class QuestionSearch extends Question
      */
     public function search(Array $params)
     {
-        $query = self::find()->joinWith(['user','cate'])->where([self::tableName() . '.status' => 1]);
+        $query = self::find()->joinWith(['user','cate', 'attr'])->where([self::tableName() . '.status' => 1]);
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
