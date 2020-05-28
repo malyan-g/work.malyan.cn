@@ -206,6 +206,7 @@ class QuestionController extends Controller
                     }
                 }catch (\Exception $e){
                     $trans->rollBack();
+                    var_dump($question->errors);
                     var_dump($questionAttr->errors);
                     $this->alert($isNewRecord ? 'Question Create Failure' : 'Question Update Failure');
                 }
