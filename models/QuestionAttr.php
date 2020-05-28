@@ -29,7 +29,6 @@ class QuestionAttr extends \yii\db\ActiveRecord
         return [
             [['describe', 'comments'], 'required'],
             [['question_id'], 'integer'],
-            [['describe'], 'required'],
             [['describe'], 'string'],
             [['comments'], 'string', 'max' => 100],
         ];
