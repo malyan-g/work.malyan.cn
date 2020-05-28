@@ -9,6 +9,7 @@ use Yii;
  *
  * @property int $question_id 问题主键
  * @property string $describe 问题描述
+ * @property string $comments 问题描述
  */
 class QuestionAttr extends \yii\db\ActiveRecord
 {
@@ -26,10 +27,11 @@ class QuestionAttr extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['describe'], 'required'],
+            [['describe', 'comments'], 'required'],
             [['question_id'], 'integer'],
             [['describe'], 'required'],
             [['describe'], 'string'],
+            [['comments'], 'string', 'max' => 100],
         ];
     }
 
@@ -41,6 +43,7 @@ class QuestionAttr extends \yii\db\ActiveRecord
         return [
             'question_id' => '问题主键',
             'describe' => '问题描述',
+            'comments' => '备注',
         ];
     }
 }
