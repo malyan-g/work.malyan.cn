@@ -13,3 +13,8 @@
 .modal-question-content img{
     width: 100%;
 }
+
+.ranking-content{
+    margin-bottom: 20px;
+    border: 1px solid #fff;
+}
