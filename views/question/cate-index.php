@@ -10,8 +10,8 @@
 use yii\widgets\ListView;
 use app\widgets\JqueryIsa;
 
-$this->title = 'Hot Question List';
-$this->params['breadcrumbs'][] = ['label' => 'Hot List', 'url' => ['question/cate-list']];
+$this->title = 'Question Ranking List';
+$this->params['breadcrumbs'][] = ['label' => 'Question Ranking', 'url' => ['question/cate-list']];
 $this->params['breadcrumbs'][] = $this->title;
 
 JqueryIsa::widget();
