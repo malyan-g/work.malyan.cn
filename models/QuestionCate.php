@@ -44,7 +44,7 @@ class QuestionCate extends \yii\db\ActiveRecord
     {
         return [
             'id' => '主键',
-            'question_name' => '问题分类描述',
+            'question_name' => '问题分类',
             'status' => '状态',
             'user_id' => '创建人',
             'created_at' => '创建时间',
