@@ -64,6 +64,11 @@ class QuestionSearch extends Question
             return $dataProvider;
         }
 
+        if(count($params) === 0){
+            $this->startDate = date('Y-m-01', strtotime(date("Y-m-d")));
+            $this->endDate = date('Y-m-d', time());
+        }
+
         // 创建时间
         if($this->startDate){
             $query->andFilterWhere(['>=', self::tableName() . '.created_at', strtotime($this->startDate)]);
@@ -94,6 +99,11 @@ class QuestionSearch extends Question
 
         if(!$this->validate()) {
             return $dataProvider;
+        }
+
+        if(count($params) === 0){
+            $this->startDate = date('Y-m-01', strtotime(date("Y-m-d")));
+            $this->endDate = date('Y-m-d', time());
         }
 
         // 创建时间
@@ -144,7 +154,7 @@ class QuestionSearch extends Question
             $query->andFilterWhere(['<=', self::tableName() . '.created_at', strtotime($this->endDate) + 86400]);
         }
 
-        $query->andFilterWhere(['>=', self::tableName() . '.created_at', strtotime($this->startDate)]);
+        $query->andFilterWhere(['cate_id' => $this->cate_id]);
 
         return $dataProvider;
     }
