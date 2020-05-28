@@ -128,7 +128,7 @@ class QuestionSearch extends Question
         ]);
 
         $query->where([self::tableName() . '.status' => 1, QuestionCate::tableName() . '.status' => 1]);
-        $query->orderBy([self::tableName() . 'created_at' => SORT_DESC]);
+        $query->orderBy([self::tableName() . '.created_at' => SORT_DESC]);
         $this->load($params);
 
         if(!$this->validate()) {
