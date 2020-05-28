@@ -194,10 +194,13 @@ class QuestionController extends Controller
         $request = Yii::$app->request;
         if($request->isPost){
             if($question->load($request->post()) && $question->validate() && $questionAttr->load($request->post()) && $questionAttr->validate()){
+                if($isNewRecord){
+                    $questionAttr->question_id = $question->id;
+                }
                // $trans = Yii::$app->db->beginTransaction();
                // try{
                   //  $question->save(false);
-                 //   $questionAttr->question_id = $question->id;
+                 //
                     $questionAttr->save(false);
                  //   $trans->commit();
                     $this->alert($isNewRecord ? 'Question Create Successfully' : 'Question Update Successfully', self::ALERT_SUCCESS);
