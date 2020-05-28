@@ -81,4 +81,12 @@ class Question extends \yii\db\ActiveRecord
     {
         return $this->hasOne(QuestionCate::className(), ['id' => 'cate_id']);
     }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getAttr()
+    {
+        return $this->hasOne(QuestionAttr::className(), ['question_id' => 'id']);
+    }
 }
