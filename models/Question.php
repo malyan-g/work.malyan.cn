@@ -31,7 +31,7 @@ class Question extends \yii\db\ActiveRecord
         return [
             [['cate_id'], 'required'],
             [['created_at'], 'integer'],
-            [['cate_id', 'user_id'], 'integer', 'max' => 4],
+            [['cate_id', 'user_id'], 'integer', 'max' => 9999],
             [['status'], 'integer', 'max' => 1],
         ];
     }

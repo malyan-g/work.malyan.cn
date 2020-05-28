@@ -33,7 +33,7 @@ class QuestionCate extends \yii\db\ActiveRecord
             [['created_at'], 'integer'],
             [['question_name'], 'string', 'max' => 64],
             [['status'], 'integer', 'max' => 1],
-            [['user_id'], 'integer', 'max' => 4],
+            [['user_id'], 'integer', 'max' => 9999],
         ];
     }
 
