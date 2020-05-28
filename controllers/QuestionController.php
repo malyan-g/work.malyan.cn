@@ -197,20 +197,19 @@ class QuestionController extends Controller
                 if($isNewRecord){
                     $questionAttr->question_id = $question->id;
                 }
-               // $trans = Yii::$app->db->beginTransaction();
-               // try{
-                  //  $question->save(false);
-                 //
+                $trans = Yii::$app->db->beginTransaction();
+                try{
+                    $question->save(false);
                     $questionAttr->save(false);
-                 //   $trans->commit();
+                    $trans->commit();
                     $this->alert($isNewRecord ? 'Question Create Successfully' : 'Question Update Successfully', self::ALERT_SUCCESS);
                     if($isNewRecord){
                         return $this->redirect(['question/create']);
                     }
-              /*  }catch (\Exception $e){
+                }catch (\Exception $e){
                     $trans->rollBack();
                     $this->alert($isNewRecord ? 'Question Create Failure' : 'Question Update Failure');
-                }*/
+                }
             }else{
                 $this->exception('Illegal Operation');
             }
