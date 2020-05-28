@@ -11,7 +11,6 @@ use yii\widgets\ListView;
 use app\widgets\JqueryIsa;
 
 $this->title = 'Question Ranking List';
-$this->params['breadcrumbs'][] = ['label' => 'Question Ranking', 'url' => ['question/index']];
 $this->params['breadcrumbs'][] = $this->title;
 
 JqueryIsa::widget();
