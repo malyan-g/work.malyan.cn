@@ -33,6 +33,12 @@
 
 .ranking-describe{
     padding: 5px;
+    border-bottom: 1px dashed #f3f3f3;
+}
+
+.ranking-comments{
+    padding: 5px;
+    color: red;
 }
 
 .modal-content img{

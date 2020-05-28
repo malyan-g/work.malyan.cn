@@ -32,6 +32,9 @@ JqueryIsa::widget();
                             <div class="ranking-describe">
                                 ' . $model->attr->describe . '
                             </div>
+                            <div class="ranking-comments">
+                                ' . $model->attr->comments . '
+                            </div>
                         </li>';
         return $html;
     }
