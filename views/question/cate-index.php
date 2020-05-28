@@ -21,14 +21,12 @@ JqueryIsa::widget();
     'layout' => '<ul class="question-list">{items}</ul>{pager}',
     'itemView' => function($model){
         $html = '<li class="ranking-content">
-                                    <div class="question-title">
-                                        <span>' . $model->user->real_name . '</span>
-                                        <span>' . $model->created_at . '</span>
-                                    </div>
-                                    <div class="question-describe">
-                                        ' . $model->attr->describe . '
-                                    </div>
-                                </table>
+                            <div class="question-title">
+                                <span>' . $model->user->real_name . '</span>
+                                <span>' . $model->created_at . '</span>
+                            </div>
+                            <div class="question-describe">
+                                ' . $model->attr->describe . '
                             </div>
                         </li>';
         return $html;
