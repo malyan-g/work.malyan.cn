@@ -30,7 +30,7 @@ class QuestionSearch extends Question
     {
         return [
             [['cate_id'], 'integer'],
-            [['startDate', 'endDate', ''], 'date', 'format' => 'php:Y-m-d', 'message'=>'{attribute}不符合格式。']
+            [['startDate', 'endDate'], 'date', 'format' => 'php:Y-m-d', 'message'=>'{attribute}不符合格式。']
         ];
     }
 
