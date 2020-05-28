@@ -121,8 +121,8 @@ class QuestionController extends Controller
     public function actionView()
     {
         $this->layout = false;
-        $question = $this->findQuestion();
-        $questionAttr = $this->findQuestionAttr($question);
+        $id = (int) Yii::$app->request->get('id', 0);
+        $questionAttr = $this->findQuestionAttr($id);
 
         return $this->render('view', [
             'questionAttr' => $questionAttr
@@ -190,7 +190,7 @@ class QuestionController extends Controller
     private function save($isNewRecord = true)
     {
         $question = $isNewRecord ? new Question() : $this->findQuestion();
-        $questionAttr = $isNewRecord ? new QuestionAttr() : $this->findQuestionAttr($question);
+        $questionAttr = $isNewRecord ? new QuestionAttr() : $this->findQuestionAttr($question->id);
         $request = Yii::$app->request;
         if($request->isPost){
             if($question->load($request->post()) && $question->validate() && $questionAttr->load($request->post()) && $questionAttr->validate()){
@@ -267,13 +267,13 @@ class QuestionController extends Controller
 
     /**
      * 问题附属查询
-     * @param Question $question
+     * @param $id
      * @return QuestionAttr the loaded model
      * @throws \yii\web\NotFoundHttpException
      */
-    public function findQuestionAttr(Question $question)
+    public function findQuestionAttr($id)
     {
-        if(($model = QuestionAttr::findOne(['question_id' => $question->id])) !== null){
+        if(($model = QuestionAttr::findOne(['question_id' => $id])) !== null){
             return $model;
         }
         $this->exception('Illegal Request');
