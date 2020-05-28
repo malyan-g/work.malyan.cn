@@ -18,3 +18,7 @@
     margin-bottom: 20px;
     border: 1px solid #fff;
 }
+
+.modal-content img{
+    width: 100%;
+}
