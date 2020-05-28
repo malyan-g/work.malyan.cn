@@ -194,8 +194,8 @@ table, img {
     text-align: left;
 }
 
-.modal-dialog{position: absolute; top: 0; bottom: 0; left: 0; right: 0;}
+.modal-dialog{position: absolute; top: 0; bottom: 0; left: 0; right: 0;width: 80%;}
 .modal-content{/*overflow-y: scroll; */ position: absolute; top: 0; bottom: 0; width: 100%;}
-.modal-body{overflow-y: scroll; position: absolute; top: 55px; bottom: 65px; width: 100%;}
+.modal-body{overflow-y: scroll; position: absolute; top: 55px; bottom: 15px; width: 100%;}
 .modal-header .close{margin-right: 15px;}
 .modal-footer{position: absolute; width: 100%; bottom: 0;}
