@@ -6,6 +6,9 @@
  * Time: 10:59
  */
 use yii\bootstrap\Html;
+
+$this->title = 'Question Ranking List';
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <div class="question-list">

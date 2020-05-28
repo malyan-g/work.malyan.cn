@@ -45,7 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
 Modal::begin([
     'id' => 'question-modal',
     'header' => '<h4 class="modal-title">问题描述</h4>',
-    'footer' => '<a href="#" class="btn btn-primary" data-dismiss="modal">Close</a>',
+    'closeButton' => false
 ]);
 $requestUrl = Url::toRoute(['question/view']);
 $js = <<<JS
