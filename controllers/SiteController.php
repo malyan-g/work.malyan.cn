@@ -89,6 +89,7 @@ class SiteController extends Controller
     }
 
     public function actionUserAdd(){
+        return false;
         $model = new User();
         $model->username = 'zfy';
         $model->password = 'Zfy@2020';
