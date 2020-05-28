@@ -7,7 +7,6 @@ use yii\helpers\Url;
 use yii\helpers\Html;
 
 $this->title = 'Question Ranking';
-$this->params['breadcrumbs'][] = $this->title;
 $routeData = ['question/cate-index'];
 
 if($searchModel->startDate) {
