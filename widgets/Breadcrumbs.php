@@ -143,13 +143,13 @@ class Breadcrumbs extends Widget
             $links[] = $this->renderItem($this->homeLink, count($this->links) > 0 ? $this->itemTemplate : $this->activeItemTemplate);
         }
 
-
         foreach ($this->links as $link) {
             if (!is_array($link)) {
                 $link = ['label' => $link];
             }
             $links[] = $this->renderItem($link, isset($link['url']) ? $this->itemTemplate : $this->activeItemTemplate);
         }
+        var_dump($links);
         echo Html::tag($this->tag, implode('', $links), $this->options);
     }
 
