@@ -232,10 +232,10 @@ class QuestionController extends Controller
         if($request->isPost){
             if($model->load($request->post()) && $model->validate()){
                if($model->save(false)){
+                   $this->alert($isNewRecord ? 'Cate Create Successfully' : 'Cate Update Successfully', self::ALERT_SUCCESS);
                     if($isNewRecord){
                         return $this->redirect(['question/cate-create']);
                     }
-                    $this->alert($isNewRecord ? 'Cate Create Successfully' : 'Cate Update Successfully', self::ALERT_SUCCESS);
                }else{
                    $this->alert($isNewRecord ? 'Cate Create Failure' : ' Cate Update Failure');
                }
