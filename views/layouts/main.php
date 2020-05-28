@@ -61,7 +61,10 @@ AppAsset::register($this);
     <div class="container">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-            'homeLabel' => 'Question Ranking'
+            'homeLink' => [
+                    'label' => 'Question Ranking',
+                    'url' => ['question/index']
+            ]
         ]) ?>
         <?= Alert::widget() ?>
         <?= $content ?>

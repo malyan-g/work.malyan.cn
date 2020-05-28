@@ -123,24 +123,23 @@ class Breadcrumbs extends Widget
      */
     public $activeItemTemplate = "<li class=\"active\">{link}</li>\n";
 
-    public $homeLabel;
-
     /**
      * Renders the widget.
      */
     public function run()
     {
-        /*if (empty($this->links)) {
-            return;
-        }*/
+        if (empty($this->links)) {
+            unset($this->homeLink['url']);
+            //return;
+        }
         $links = [];
         if ($this->homeLink === null) {
             $links[] = $this->renderItem([
-                'label' => $this->homeLabel ? $this->homeLabel : Yii::t('yii', 'Home'),
+                'label' => Yii::t('yii', 'Home'),
                 'url' => Yii::$app->homeUrl,
-            ], empty($this->links) ? $this->activeItemTemplate : $this->itemTemplate);
+            ], empty($this->links) ? isset($this->homeLink['url']) ? $this->itemTemplate : $this->activeItemTemplate);
         } elseif ($this->homeLink !== false) {
-            $links[] = $this->renderItem($this->homeLink, empty($this->links) ? $this->activeItemTemplate : $this->itemTemplate);
+            $links[] = $this->renderItem($this->homeLink, isset($this->homeLink['url']) ? $this->itemTemplate : $this->activeItemTemplate);
         }
 
         foreach ($this->links as $link) {
