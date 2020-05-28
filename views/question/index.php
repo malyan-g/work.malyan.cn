@@ -6,7 +6,7 @@
 use yii\helpers\Url;
 use yii\helpers\Html;
 
-$this->title = 'Question Ranking';
+$this->title = 'Hot List';
 $this->params['breadcrumbs'][] = $this->title;
 $routeData = ['question/cate-index'];
 
