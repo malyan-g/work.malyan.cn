@@ -14,13 +14,25 @@
 .ranking-list{
     list-style:none;
     margin:0;
+    padding: 0;
 }
 
 .ranking-content{
-    display:inline;
-    padding: 20px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 1px solid #f3f3f3;
     margin-bottom: 20px;
-    border: 1px solid #fff;
+}
+
+.ranking-title{
+    padding: 5px;
+    border-bottom: 1px dashed #f3f3f3;
+    color: #646464;
+}
+
+.ranking-describe{
+    padding: 5px;
 }
 
 .modal-content img{

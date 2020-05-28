@@ -22,8 +22,11 @@ JqueryIsa::widget();
     'itemView' => function($model){
         $html = '<li class="ranking-content">
                             <div class="ranking-title">
+                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                                 <span>' . $model->user->real_name . '</span>
-                                <span>' . $model->created_at . '</span>
+                                &nbsp;&nbsp;
+                                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                <span>' . date('Y-m-d H:i:s', $model->created_at) . '</span>
                             </div>
                             <div class="ranking-describe">
                                 ' . $model->attr->describe . '
