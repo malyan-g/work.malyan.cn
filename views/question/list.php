@@ -22,7 +22,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'id',
         'cate.question_name',
         'attr.comments',
-        'user.real_name',
+        [
+            'attribute'=>'user.real_name',
+            'contentOptions' => ['style'=>'max-width:200px;']
+        ],
         'created_at:datetime',
         [
             'attribute' => 'id',
