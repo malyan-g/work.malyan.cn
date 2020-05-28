@@ -20,7 +20,6 @@ JqueryIsa::widget();
     'dataProvider' => $dataProvider,
     'layout' => '<ul class="question-list">{items}</ul>{pager}',
     'itemView' => function($model){
-        var_dump($model);die;
         $html = '<li class="ranking-content">
                                     <div class="question-title">
                                         <span>' . $model->user->real_name . '</span>
