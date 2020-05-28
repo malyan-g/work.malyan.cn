@@ -39,7 +39,6 @@ class QuestionController extends Controller
     {
         $searchModel = new QuestionSearch();
         $dataProvider = $searchModel->indexSearch(Yii::$app->request->queryParams);
-        var_dump(Yii::$app->request->queryParams);
         $data = $dataProvider->query->limit(10)->offset(0)->asArray()->all();
         return $this->render('index', [
             'searchModel' => $searchModel,
