@@ -195,7 +195,7 @@ class QuestionController extends Controller
         if($request->isPost){
             if($question->load($request->post()) && $question->validate() && $questionAttr->load($request->post()) && $questionAttr->validate()){
                 $trans = Yii::$app->db->beginTransaction();
-                try{
+               // try{
                     $question->save(false);
                     $questionAttr->question_id = $question->id;
                     $questionAttr->save(false);
@@ -204,10 +204,10 @@ class QuestionController extends Controller
                     if($isNewRecord){
                         return $this->redirect(['question/create']);
                     }
-                }catch (\Exception $e){
+              /*  }catch (\Exception $e){
                     $trans->rollBack();
                     $this->alert($isNewRecord ? 'Question Create Failure' : 'Question Update Failure');
-                }
+                }*/
             }else{
                 $this->exception('Illegal Operation');
             }
