@@ -80,7 +80,8 @@ AppAsset::register($this);
         </p>
     </div>
 </footer>
-
+<!-- 返回顶部 -->
+<?= \bluezed\scrollTop\ScrollTop::widget() ?>
 <?php $this->endBody() ?>
 </body>
 </html>
