@@ -29,7 +29,8 @@ class QuestionSearch extends Question
     public function rules()
     {
         return [
-            [['startDate', 'endDate', 'cate_id'], 'date', 'format' => 'php:Y-m-d', 'message'=>'{attribute}不符合格式。']
+            [['cate_id'], 'integer']
+            [['startDate', 'endDate', ''], 'date', 'format' => 'php:Y-m-d', 'message'=>'{attribute}不符合格式。']
         ];
     }
 
