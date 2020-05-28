@@ -118,7 +118,7 @@ class QuestionSearch extends Question
      */
     public function cateSearch(Array $params)
     {
-        $query = self::find()->joinWith(['cate'])->select(['cate_id', 'count(1) as total']);
+        $query = self::find()->joinWith(['cate','user','attr'])->select(['cate_id', 'count(1) as total']);
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query

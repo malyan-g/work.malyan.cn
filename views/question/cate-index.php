@@ -33,4 +33,4 @@ JqueryIsa::widget();
                         </li>';
         return $html;
     }
-]) : '暂无数据' ?>
+]) : '' ?>

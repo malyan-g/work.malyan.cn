@@ -55,7 +55,7 @@ class QuestionController extends Controller
         $searchModel = new QuestionSearch();
         $dataProvider = $searchModel->cateSearch(Yii::$app->request->queryParams);
         return $this->render('cate-index', [
-            'searchModel' => $searchModel,
+            'model' => $model,
             'dataProvider' => $dataProvider
         ]);
     }
