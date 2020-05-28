@@ -9,7 +9,7 @@ use Yii;
  *
  * @property int $question_id 问题主键
  * @property string $describe 问题描述
- * @property string $comments 问题描述
+ * @property string $comments 备注
  */
 class QuestionAttr extends \yii\db\ActiveRecord
 {
