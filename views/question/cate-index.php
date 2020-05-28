@@ -5,22 +5,32 @@
  * Date: 2020/5/27
  * Time: 10:59
  */
-use yii\bootstrap\Html;
+/* @var  $dataProvider \yii\data\ActiveDataProvider */
+
+use yii\widgets\ListView;
+use app\widgets\JqueryIsa;
 
 $this->title = 'Question Ranking List';
 $this->params['breadcrumbs'][] = $this->title;
-?>
 
-<div class="question-list">
-    <table>
-        <tr class="question-title">
-            <td>
-                <span>用户</span>
-                <span>12121</span>
-            </td>
-        </tr>
-        <tr class="question-describe">
-            <td>1212121212121212112</td>
-        </tr>
-    </table>
-</div>
+JqueryIsa::widget();
+?>
+<!-- 列表 -->
+<?= $dataProvider->query->count() ? ListView::widget([
+    'dataProvider' => $dataProvider,
+    'layout' => '<ul class="question-list">{items}</ul>{pager}',
+    'itemView' => function($model){
+        $html = '<li class="ranking-content">
+                                    <div class="question-title">
+                                        <span>' . $model->user->real_name . '</span>
+                                        <span>' . $model->created_at . '</span>
+                                    </div>
+                                    <div class="question-describe">
+                                        ' . $model->attr->describe . '
+                                    </div>
+                                </table>
+                            </div>
+                        </li>';
+        return $html;
+    }
+]) : '暂无数据' ?>
