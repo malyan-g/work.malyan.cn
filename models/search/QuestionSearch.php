@@ -20,7 +20,6 @@ use yii\data\ActiveDataProvider;
  */
 class QuestionSearch extends Question
 {
-    public $number;
     public $startDate;
     public $endDate;
 
@@ -139,7 +138,6 @@ class QuestionSearch extends Question
                 'page' => ArrayHelper::getValue($params, 'page', 1)
             ],
         ]);
-        $this->number = $dataProvider->pagination->offset;
 
         $query->where([self::tableName() . '.status' => 1, QuestionCate::tableName() . '.status' => 1]);
         $query->orderBy([self::tableName() . '.created_at' => SORT_DESC]);
