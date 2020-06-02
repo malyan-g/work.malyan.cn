@@ -55,7 +55,7 @@ class QuestionController extends Controller
     public function actionCateIndex()
     {
         $searchModel = new QuestionSearch();
-        $dataProvider = $searchModel->cate{pager}Search(Yii::$app->request->queryParams);
+        $dataProvider = $searchModel->cateSearch(Yii::$app->request->queryParams);
         $this->number = $searchModel->number + 1;
         return $this->render('cate-index', [
             'searchModel' => $searchModel,
