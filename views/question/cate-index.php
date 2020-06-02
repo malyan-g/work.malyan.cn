@@ -20,10 +20,10 @@ $number = 1;
 <?= $dataProvider->query->count() ? ListView::widget([
     'dataProvider' => $dataProvider,
     'layout' => '<ul class="ranking-list">{items}</ul>{pager}',
-    'itemView' => function($model){
+    'itemView' => function($model, & $number){
         $html = '<li class="ranking-content">
                             <div class="ranking-title">
-                                <span class="ranking-number">1</span>
+                                <span class="ranking-number">'. $number .'</span>
                                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                                 <span>' . $model->user->real_name . '</span>
                                 &nbsp;&nbsp;
