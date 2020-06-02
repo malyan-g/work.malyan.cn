@@ -135,7 +135,8 @@ class QuestionSearch extends Question
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'pagination' => [
-                'pageSize' => ArrayHelper::getValue($params, 'per-page', 10)
+                'pageSize' => ArrayHelper::getValue($params, 'per-page', 10),
+                'page' => ArrayHelper::getValue($params, 'page', 1)
             ],
         ]);
         $this->number = $dataProvider->pagination->limit * $dataProvider->pagination->offset;
