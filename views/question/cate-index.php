@@ -14,7 +14,6 @@ $this->title = 'Question Ranking List';
 $this->params['breadcrumbs'][] = $this->title;
 
 JqueryIsa::widget();
-$number = 1;
 ?>
 <!-- 列表 -->
 <?= $dataProvider->query->count() ? ListView::widget([
