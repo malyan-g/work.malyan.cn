@@ -56,7 +56,7 @@ class QuestionController extends Controller
     {
         $searchModel = new QuestionSearch();
         $dataProvider = $searchModel->cateSearch(Yii::$app->request->queryParams);
-        var_dump($dataProvider->pagination->limit);
+        var_dump($dataProvider->pagination->offset);
         $this->number = $dataProvider->pagination->limit + 1;
         return $this->render('cate-index', [
             'searchModel' => $searchModel,
