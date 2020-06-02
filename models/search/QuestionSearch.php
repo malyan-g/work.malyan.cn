@@ -95,7 +95,7 @@ class QuestionSearch extends Question
         ]);
 
         $query->where([self::tableName() . '.status' => 1, QuestionCate::tableName() . '.status' => 1]);
-        $query->groupBy('cate_id')->orderBy(['total' => SORT_DESC]);
+        $query->groupBy('cate_id')->orderBy(['total' => SORT_DESC, 'cate_id' => SORT_ASC]);
         $this->load($params);
 
         if(!$this->validate()) {
