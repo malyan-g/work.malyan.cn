@@ -139,6 +139,7 @@ class QuestionSearch extends Question
         ]);
 
         $query->where([self::tableName() . '.status' => 1, QuestionCate::tableName() . '.status' => 1]);
+        var_dump($dataProvider->pagination->limit,$dataProvider->pagination->offset);
         $query->limit($dataProvider->pagination->limit)->offset($dataProvider->pagination->offset);
         $query->orderBy([self::tableName() . '.created_at' => SORT_DESC]);
         $this->load($params);
