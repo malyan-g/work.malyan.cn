@@ -37,6 +37,7 @@ $number = 1;
                                 ' . $model->attr->comments . '
                             </div>
                         </li>';
+        $number ++;
         return $html;
     }
 ]) : '' ?>
