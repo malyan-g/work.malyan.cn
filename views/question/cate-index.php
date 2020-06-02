@@ -14,14 +14,17 @@ $this->title = 'Question Ranking List';
 $this->params['breadcrumbs'][] = $this->title;
 
 JqueryIsa::widget();
+$number = 1;
 ?>
 <!-- 列表 -->
 <?= $dataProvider->query->count() ? ListView::widget([
     'dataProvider' => $dataProvider,
     'layout' => '<ul class="ranking-list">{items}</ul>{pager}',
     'itemView' => function($model){
+    var_dump($model);
         $html = '<li class="ranking-content">
                             <div class="ranking-title">
+                                <span class="badge">'. $model->number .'</span>
                                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                                 <span>' . $model->user->real_name . '</span>
                                 &nbsp;&nbsp;
