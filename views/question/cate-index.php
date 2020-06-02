@@ -7,7 +7,7 @@
  */
 /* @var  $dataProvider \yii\data\ActiveDataProvider */
 
-use app\widgets\ListView;
+use yii\widgets\ListView;
 use app\widgets\JqueryIsa;
 
 $this->title = 'Question Ranking List';
@@ -19,9 +19,10 @@ JqueryIsa::widget();
 <?= $dataProvider->query->count() ? ListView::widget([
     'dataProvider' => $dataProvider,
     'layout' => '<ul class="ranking-list">{items}</ul>{pager}',
-    'itemView' => function($model, $key, $index, $number){
+    'itemView' => function($model, $key, $index){
+        $number = $this->context->number + $index + 1;
         if($number < 10){
-            $number = '0'. $number;
+            $number = '0' . $number;
         }
         $html = '<li class="ranking-content">
                             <div class="ranking-title">
