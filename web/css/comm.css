@@ -25,12 +25,7 @@
     margin-bottom: 20px;
 }
 
-.ranking-content{
-    counter-increment:myCounter;
-}
-
-.ranking-content:before{
-    content:counter(myCounter,decimal-leading-zero);
+.ranking-number{
     padding:1px 5px;
     margin-right:10px;
     background: #F63;

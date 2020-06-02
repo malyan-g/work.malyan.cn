@@ -23,6 +23,7 @@ $number = 1;
     'itemView' => function($model){
         $html = '<li class="ranking-content">
                             <div class="ranking-title">
+                                <span class="ranking-number">1</span>
                                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                                 <span>' . $model->user->real_name . '</span>
                                 &nbsp;&nbsp;
