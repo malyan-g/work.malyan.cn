@@ -132,10 +132,14 @@ class QuestionSearch extends Question
         $query = self::find()->joinWith(['cate','user','attr']);
 
         $dataProvider = new ActiveDataProvider([
-            'query' => $query
+            'query' => $query,
+            'pagination' => [
+                'pageSize' => ArrayHelper::getValue($params, 'per-page', 10)
+            ],
         ]);
 
         $query->where([self::tableName() . '.status' => 1, QuestionCate::tableName() . '.status' => 1]);
+        $query->limit($dataProvider->pagination->limit)->offset($dataProvider->pagination->offset);
         $query->orderBy([self::tableName() . '.created_at' => SORT_DESC]);
         $this->load($params);
 
