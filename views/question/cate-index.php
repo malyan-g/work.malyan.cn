@@ -24,7 +24,7 @@ $number = 1;
     var_dump($model);
         $html = '<li class="ranking-content">
                             <div class="ranking-title">
-                                <span class="badge">'. $model->number .'</span>
+                                <span class="badge">1</span>
                                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                                 <span>' . $model->user->real_name . '</span>
                                 &nbsp;&nbsp;
