@@ -132,10 +132,7 @@ class QuestionSearch extends Question
         $query = self::find()->joinWith(['cate','user','attr']);
 
         $dataProvider = new ActiveDataProvider([
-            'query' => $query,
-            'pagination' => [
-                'pageSize' => ArrayHelper::getValue($params, 'per-page', 10)
-            ],
+            'query' => $query
         ]);
 
         $query->where([self::tableName() . '.status' => 1, QuestionCate::tableName() . '.status' => 1]);
@@ -155,7 +152,7 @@ class QuestionSearch extends Question
             $query->andFilterWhere(['<=', self::tableName() . '.created_at', strtotime($this->endDate) + 86400]);
         }
 
-        $query->andFilterWhere(['cate_id' => $this->cate_id]);
+        //$query->andFilterWhere(['cate_id' => $this->cate_id]);
 
         return $dataProvider;
     }
