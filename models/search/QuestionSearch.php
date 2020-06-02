@@ -136,7 +136,7 @@ class QuestionSearch extends Question
             'query' => $query,
             'pagination' => [
                 'pageSize' => ArrayHelper::getValue($params, 'per-page', 10),
-                'page' => ArrayHelper::getValue($params, 'page', 1)
+                'page' => ArrayHelper::getValue($params, 'page', 0)
             ],
         ]);
         var_dump($dataProvider->pagination->limit,$dataProvider->pagination->offset);
