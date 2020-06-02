@@ -157,7 +157,7 @@ class QuestionSearch extends Question
             $query->andFilterWhere(['<=', self::tableName() . '.created_at', strtotime($this->endDate) + 86400]);
         }
 
-        //$query->andFilterWhere(['cate_id' => $this->cate_id]);
+        $query->andFilterWhere(['cate_id' => $this->cate_id]);
 
         return $dataProvider;
     }
