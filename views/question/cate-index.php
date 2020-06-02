@@ -21,6 +21,7 @@ $number = 1;
     'dataProvider' => $dataProvider,
     'layout' => '<ul class="ranking-list">{items}</ul>{pager}',
     'itemView' => function($model){
+    var_dump($model->number);die;
         $html = '<li class="ranking-content">
                             <div class="ranking-title">
                                 <span class="badge">'. $model->number .'</span>
