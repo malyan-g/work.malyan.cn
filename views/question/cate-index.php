@@ -7,7 +7,7 @@
  */
 /* @var  $dataProvider \yii\data\ActiveDataProvider */
 
-use yii\widgets\ListView;
+use app\widgets\ListView;
 use app\widgets\JqueryIsa;
 
 $this->title = 'Question Ranking List';
