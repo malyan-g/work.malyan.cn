@@ -19,8 +19,6 @@ use yii\data\ActiveDataProvider;
  */
 class QuestionCateSearch extends QuestionCate
 {
-    public $number = 1;
-
     /**
      * @inheritdoc
      */

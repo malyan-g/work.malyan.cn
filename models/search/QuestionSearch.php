@@ -20,6 +20,7 @@ use yii\data\ActiveDataProvider;
  */
 class QuestionSearch extends Question
 {
+    public $number = 1;
     public $startDate;
     public $endDate;
 
