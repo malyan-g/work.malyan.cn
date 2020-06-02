@@ -21,7 +21,6 @@ $number = 1;
     'dataProvider' => $dataProvider,
     'layout' => '<ul class="ranking-list">{items}</ul>{pager}',
     'itemView' => function($model){
-    var_dump($model);die;
         $html = '<li class="ranking-content">
                             <div class="ranking-title">
                                 <span class="ranking-number">'. $model->number .'</span>
@@ -38,7 +37,7 @@ $number = 1;
                                 ' . $model->attr->comments . '
                             </div>
                         </li>';
-        $number ++;
+        $model->number ++;
         return $html;
     }
 ]) : '' ?>
