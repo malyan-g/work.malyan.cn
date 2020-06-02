@@ -22,7 +22,7 @@ JqueryIsa::widget();
     'itemView' => function($model, $key, $index){
         $html = '<li class="ranking-content">
                             <div class="ranking-title">
-                                <span class="ranking-number">'. $index + 1 .'</span>
+                                <span class="ranking-number">'. $index .'</span>
                                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                                 <span>' . $model->user->real_name . '</span>
                                 &nbsp;&nbsp;
