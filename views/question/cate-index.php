@@ -20,7 +20,7 @@ JqueryIsa::widget();
     'dataProvider' => $dataProvider,
     'layout' => '<ul class="ranking-list">{items}</ul>{pager}',
     'itemView' => function($model, $key, $index){
-        $number =  $this->context->number + $index + 1;
+        $number =  $this->context->number + intval($index);
         var_dump($number);
         if($number < 10){
             $number = '0' . $number;
