@@ -145,6 +145,7 @@ class QuestionSearch extends Question
         if(!$this->validate()) {
             return $dataProvider;
         }
+        var_dump(1);
 
         // 创建时间
         if($this->startDate){
