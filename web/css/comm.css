@@ -29,10 +29,10 @@
     padding: 5px;
     border-bottom: 1px dashed #f3f3f3;
     color: #646464;
+    counter-increment:myCounter + 1;
 }
 
 .ranking-title:before{
-    counter-increment: myCounter + 1;
     content:counter(myCounter,decimal-leading-zero);
     padding:1px 5px;
     margin-right:10px;
