@@ -20,9 +20,10 @@ JqueryIsa::widget();
     'dataProvider' => $dataProvider,
     'layout' => '<ul class="ranking-list">{items}</ul>{pager}',
     'itemView' => function($model, $key, $index){
+        $number = $index + 1;
         $html = '<li class="ranking-content">
                             <div class="ranking-title">
-                                <span class="ranking-number">'. $index .'</span>
+                                <span class="ranking-number">'. $number .'</span>
                                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                                 <span>' . $model->user->real_name . '</span>
                                 &nbsp;&nbsp;
