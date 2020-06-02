@@ -19,10 +19,9 @@ JqueryIsa::widget();
 <?= $dataProvider->query->count() ? ListView::widget([
     'dataProvider' => $dataProvider,
     'layout' => '<ul class="ranking-list">{items}</ul>{pager}',
-    'itemView' => function($model, $key, $index){
-        $number = $this->context->number + $index + 1;
+    'itemView' => function($model, $key, $index, $number){
         if($number < 10){
-            $number = '0' . $number;
+            $number = '0'. $number;
         }
         $html = '<li class="ranking-content">
                             <div class="ranking-title">
