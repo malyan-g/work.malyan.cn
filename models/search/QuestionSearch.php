@@ -20,6 +20,7 @@ use yii\data\ActiveDataProvider;
  */
 class QuestionSearch extends Question
 {
+    public $number = 1;
     public $startDate;
     public $endDate;
 
@@ -93,6 +94,8 @@ class QuestionSearch extends Question
         $dataProvider = new ActiveDataProvider([
             'query' => $query
         ]);
+
+        $this->number = $dataProvider->pagination->limit * $dataProvider->pagination->offset;
 
         $query->where([self::tableName() . '.status' => 1, QuestionCate::tableName() . '.status' => 1]);
         $query->groupBy('cate_id')->orderBy(['total' => SORT_DESC]);
