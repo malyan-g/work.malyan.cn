@@ -29,7 +29,7 @@
     padding: 5px;
     border-bottom: 1px dashed #f3f3f3;
     color: #646464;
-    counter-increment:myCounter + 1;
+    counter-increment:myCounter;
 }
 
 .ranking-title:before{
