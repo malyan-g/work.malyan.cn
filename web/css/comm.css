@@ -25,14 +25,11 @@
     margin-bottom: 20px;
 }
 
-.ranking-title{
-    padding: 5px;
-    border-bottom: 1px dashed #f3f3f3;
-    color: #646464;
+.ranking-list > div{
     counter-increment:myCounter;
 }
 
-.ranking-title:before{
+.ranking-list > div:before{
     content:counter(myCounter,decimal-leading-zero);
     padding:1px 5px;
     margin-right:10px;
@@ -41,6 +38,12 @@
     -webkit-border-radius:4px;
     -moz-border-radius:4px;
     color:#FFF
+}
+
+.ranking-title{
+    padding: 5px;
+    border-bottom: 1px dashed #f3f3f3;
+    color: #646464;
 }
 
 .ranking-describe{
