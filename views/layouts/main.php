@@ -80,7 +80,7 @@ AppAsset::register($this);
         </p>
     </div>
 </footer>
-<?= \bluezed\scrollTop\ScrollTop::widget() ?>
+<?php //\bluezed\scrollTop\ScrollTop::widget() ?>
 <?php $this->endBody() ?>
 </body>
 </html>
