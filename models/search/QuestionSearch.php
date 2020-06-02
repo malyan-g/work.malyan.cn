@@ -65,7 +65,7 @@ class QuestionSearch extends Question
             return $dataProvider;
         }
 
-        if(count($params) === 0){
+        if(empty($params['QuestionSearch']['startDate']) && empty($params['QuestionSearch']['endDate'])){
             $this->startDate = date('Y-m-01', strtotime(date("Y-m-d")));
             $this->endDate = date('Y-m-d', time());
         }
@@ -102,7 +102,7 @@ class QuestionSearch extends Question
             return $dataProvider;
         }
 
-        if(count($params) === 0){
+        if(empty($params['QuestionSearch']['startDate']) && empty($params['QuestionSearch']['endDate'])){
             $this->startDate = date('Y-m-01', strtotime(date("Y-m-d")));
             $this->endDate = date('Y-m-d', time());
         }
