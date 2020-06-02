@@ -20,7 +20,7 @@ $number = 1;
 <?= $dataProvider->query->count() ? ListView::widget([
     'dataProvider' => $dataProvider,
     'layout' => '<ul class="ranking-list">{items}</ul>{pager}',
-    'itemView' => function($model, $key, $value){
+    'itemView' => function($model, $key, $index){
     var_dump($key,$value);die;
         $html = '<li class="ranking-content">
                             <div class="ranking-title">
