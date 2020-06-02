@@ -20,7 +20,7 @@ JqueryIsa::widget();
     'dataProvider' => $dataProvider,
     'layout' => '<ul class="ranking-list">{items}</ul>{pager}',
     'itemView' => function($model, $key, $index){
-        var_dump($this);
+        var_dump($this);die;
         $number = $index + 1;
         $html = '<li class="ranking-content">
                             <div class="ranking-title">
