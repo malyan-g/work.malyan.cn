@@ -15,6 +15,8 @@ use Yii;
  */
 class Question extends \yii\db\ActiveRecord
 {
+    public $number;
+
     /**
      * @inheritdoc
      */
