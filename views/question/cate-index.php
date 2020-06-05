@@ -25,8 +25,8 @@ JqueryIsa::widget();
             $number = '0' . $number;
         }
         $html = '<li class="ranking-content">
-                            <div class="ranking-title rt-mrt">
-                                <span class="ranking-number">'. $number .'</span>
+                            <div class="ranking-title">
+                                <span class="ranking-number  rt-mrt">'. $number .'</span>
                                 <!-- <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                                 <span>' . $model->user->real_name . '</span> -->
                                 <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
