@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
     'columns' => [
         'id',
         'question_name',
-        'user.real_name',
+        //'user.real_name',
         'created_at:datetime',
         [
             'attribute' => 'id',

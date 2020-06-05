@@ -27,9 +27,10 @@ JqueryIsa::widget();
         $html = '<li class="ranking-content">
                             <div class="ranking-title">
                                 <span class="ranking-number">'. $number .'</span>
-                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                                <span>' . $model->user->real_name . '</span>
-                                &nbsp;&nbsp;
+                                <!-- <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                <span>' . $model->user->real_name . '</span> -->
+                                <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
+                                <span>' . $model->cate->question_name . '</span>
                                 <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
                                 <span>' . date('Y-m-d H:i:s', $model->created_at) . '</span>
                             </div>

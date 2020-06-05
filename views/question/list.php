@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'attribute'=>'attr.comments',
             'contentOptions' => ['style'=>'max-width:240px;']
         ],
-        'user.real_name',
+        //'user.real_name',
         'created_at:datetime',
         [
             'attribute' => 'id',
