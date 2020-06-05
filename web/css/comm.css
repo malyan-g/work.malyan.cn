@@ -27,7 +27,6 @@
 
 .ranking-number{
     padding:1px 5px;
-    margin-right:10px;
     background: #F63;
     border-radius:4px;
     -webkit-border-radius:4px;
@@ -39,6 +38,10 @@
     padding: 5px;
     border-bottom: 1px dashed #f3f3f3;
     color: #646464;
+}
+
+.ranking-title span{
+    margin-right: 10px;
 }
 
 .ranking-describe{
