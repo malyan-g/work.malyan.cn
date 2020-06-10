@@ -70,7 +70,7 @@ class QuestionCate extends \yii\db\ActiveRecord
      */
     public static function cateArray()
     {
-        return self::find()->select('question_name')->indexBy('id')->asArray()->column();
+        return self::find()->select('question_name')->where(['status' => 1])->indexBy('id')->asArray()->column();
     }
 
     /**
