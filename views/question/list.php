@@ -11,7 +11,7 @@ use yii\bootstrap\Modal;
 $this->title = 'Question List';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<?= $this->render('search', ['searchModel' => $searchModel, 'searchType' => 'list']) ?>
+<?= $this->render('search', ['searchModel' => $searchModel]) ?>
 <div style="margin: 10px 0">
     <?= Html::a('Create Question', ['question/create'], ['class' => 'btn btn-success', 'target' => '_blank']) ?>
 </div>
