@@ -24,8 +24,13 @@ if($searchModel->endDate){
 <table class="c-table opr-toplist1-table">
     <tbody>
     <tr>
-        <td><?= $this->title ?></td>
-        <td class="opr-toplist1-right">Number（<?= $total ?>）</td>
+        <td>
+            <strong><?= $this->title ?></strong>
+        </td>
+        <td class="opr-toplist1-right">
+            <strong>
+                Number（<span style="color: red"><?= $total ?></span>>）
+            </strong></td>
     </tr>
         <?php foreach ($data as $key => $value): ?>
         <tr>
