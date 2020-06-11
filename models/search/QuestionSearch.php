@@ -70,6 +70,10 @@ class QuestionSearch extends Question
             $this->endDate = date('Y-m-d', time());
         }
 
+        $query->andFilterWhere([
+            'cate_id' => $this->cate_id
+        ]);
+
         // 创建时间
         if($this->startDate){
             $query->andFilterWhere(['>=', self::tableName() . '.created_at', strtotime($this->startDate)]);

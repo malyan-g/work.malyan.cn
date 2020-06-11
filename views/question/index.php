@@ -18,7 +18,7 @@ if($searchModel->endDate){
 }
 
 ?>
-<?= $this->render('search', ['searchModel' => $searchModel]) ?>
+<?= $this->render('search', ['searchModel' => $searchModel, 'searchType' => 'index']) ?>
 <P></P>
 <table class="c-table opr-toplist1-table">
     <tbody>
