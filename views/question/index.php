@@ -25,7 +25,7 @@ if($searchModel->endDate){
     <tbody>
     <tr>
         <td><?= $this->title ?></td>
-        <td class="opr-toplist1-right">Number [<?= $total ?>]</td>
+        <td class="opr-toplist1-right">Number（<?= $total ?>）</td>
     </tr>
         <?php foreach ($data as $key => $value): ?>
         <tr>
