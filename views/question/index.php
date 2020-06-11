@@ -29,7 +29,7 @@ if($searchModel->endDate){
         </td>
         <td class="opr-toplist1-right">
             <strong>
-                Number（<span style="color: red"><?= $total ?></span>>）
+                Number（<span style="color: red"><?= $total ?></span>）
             </strong></td>
     </tr>
         <?php foreach ($data as $key => $value): ?>
