@@ -43,11 +43,14 @@ class QuestionController extends Controller
         $dataProvider = $searchModel->indexSearch(Yii::$app->request->queryParams);
         $query = $dataProvider->query->limit(10)->offset(0);
         $data = $query->asArray()->all();
-        $count = $query->count();
+        $total = 0;
+        foreach ($data as $val){
+            $total += $val['total'];
+        }
         return $this->render('index', [
             'searchModel' => $searchModel,
             'data' => $data,
-            'count' => $count
+            'total' => $total
         ]);
     }
 

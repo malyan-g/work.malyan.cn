@@ -1,7 +1,7 @@
 <?php
 /* @var $this yii\web\View */
 /* @var $data array */
-/* @var $count int */
+/* @var $total int */
 /* @var $searchModel \app\models\search\QuestionSearch */
 
 use yii\helpers\Url;
@@ -25,7 +25,7 @@ if($searchModel->endDate){
     <tbody>
     <tr>
         <td><?= $this->title ?></td>
-        <td class="opr-toplist1-right">Number（<?= $count ?>）</td>
+        <td class="opr-toplist1-right">Number（<?= $total ?>）</td>
     </tr>
         <?php foreach ($data as $key => $value): ?>
         <tr>
