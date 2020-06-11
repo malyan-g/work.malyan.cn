@@ -15,7 +15,7 @@ use app\widgets\Laydate;
 ?>
 <?php $form = ActiveForm::begin(['options' => ['class' => 'form-inline btn-toolbar'], 'method' => 'get']) ?>
 <?php if($searchType == 'list'): ?>
-    <?= $form->field($question, 'cate_id')->dropDownList(\app\models\QuestionCate::cateArray(), ['prompt' => '请选择']) ?>
+    <?= $form->field($searchModel, 'cate_id')->dropDownList(\app\models\QuestionCate::cateArray(), ['prompt' => '请选择']) ?>
 <?php endif; ?>
 <?=  Laydate::widget(['form' => $form, 'model' => $searchModel, 'label' => '日期：', 'startDate' => 'startDate', 'endDate' => 'endDate']) ?>
 &nbsp;
