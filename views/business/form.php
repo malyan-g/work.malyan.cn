@@ -11,7 +11,7 @@ use yii\bootstrap\Html;
 use yii\widgets\ActiveForm;
 
 $isNewRecord = $model->isNewRecord;
-$this->title = 'Question ' . ($isNewRecord ? 'Create' : 'Update');
+$this->title = 'Business ' . ($isNewRecord ? 'Create' : 'Update');
 $this->params['breadcrumbs'][] = ['label' => 'Business List', 'url' => ['business/list']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

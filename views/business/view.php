@@ -5,10 +5,9 @@
  * Date: 2020/5/26
  * Time: 17:29
  */
-/* @var $questionAttr \app\models\QuestionAttr */
+/* @var $questionAttr \app\models\Business */
 
-use yii\bootstrap\Html;
 ?>
 <div class="modal-question-content">
-    <?= $questionAttr->describe ?>
+    <?= $questionAttr->content ?>
 </div>
