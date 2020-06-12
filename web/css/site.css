@@ -199,3 +199,10 @@ table, img {
 .modal-body{overflow-y: scroll; position: absolute; top: 55px; bottom: 15px; width: 100%;}
 .modal-header .close{margin-right: 15px;}
 .modal-footer{position: absolute; width: 100%; bottom: 0;}
+
+.navbar {
+    background: #fff none repeat scroll 0 0;
+    border-bottom: medium none #fff;
+    border-top: 2px solid #35b558;
+    box-shadow: 3px 3px 3px #eee;
+}
