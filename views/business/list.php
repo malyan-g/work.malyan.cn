@@ -27,7 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'value' => function($model){
                 $title = $model->title;
                 if($this->context->keywords){
-                    $title = str_replace($title, $this->context->keywords, "<span style='color: red'>" . $this->context->keywords. "</span>");
+                    $title = str_replace($this->context->keywords, "<span style='color: red'>" . $this->context->keywords. "</span>", $title);
                 }
                 return $title;
             }
