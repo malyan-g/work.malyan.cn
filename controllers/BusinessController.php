@@ -19,6 +19,7 @@ use app\models\search\BusinessSearch;
 class BusinessController extends Controller
 {
     public $keywords;
+    public $businessId = 8;
 
     public function actions()
     {
@@ -81,17 +82,19 @@ class BusinessController extends Controller
     public function actionDelete()
     {
         $model = $this->findModel();
-        if($model->user_id == $this->userId){
-            $model->status = 0;
-            if($model->save(false)){
-                $this->alert('Business Delete Successfully', self::ALERT_SUCCESS);
-            }else{
-                $this->alert('Business Delete Failure');
+        if($model->id != $this->businessId){
+            if($model->user_id == $this->userId){
+                $model->status = 0;
+                if($model->save(false)){
+                    $this->alert('Business Delete Successfully', self::ALERT_SUCCESS);
+                }else{
+                    $this->alert('Business Delete Failure');
+                }
+                return $this->redirect(Yii::$app->request->referrer);
             }
-            return $this->redirect(Yii::$app->request->referrer);
-        }else{
-            $this->exception('Illegal Request');
         }
+
+        $this->exception('Illegal Request');
     }
 
     /**
@@ -119,8 +122,10 @@ class BusinessController extends Controller
     {
         $model = $isNewRecord ? new Business() : $this->findModel();
         if($isNewRecord === false){
-            if($model->user_id != $this->userId){
-                $this->exception('Illegal Request');
+            if($model->id != $this->businessId){
+                if($model->user_id != $this->userId){
+                    $this->exception('Illegal Request');
+                }
             }
         }
         $request = Yii::$app->request;

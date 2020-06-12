@@ -38,9 +38,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'enableSorting'=>false,
             'value' => function($model){
                 $label = Html::a('View', ['business/view', 'id'=>$model->id], ['class'=>'btn btn-info', 'target' => '_blank']);
-                if($this->context->userId == $model->user_id){
+                if($model->user_id == $this->context->userId || $model->id == $this->context->businessId){
                     $label .= Html::a('Update', ['business/update', 'id'=>$model->id], ['class'=>'btn btn-warning', 'target' => '_blank']);
-                    $label .= Html::a('Delete',['business/delete', 'id'=>$model->id], ['class'=>'btn btn-danger', 'data-confirm' => 'Confirm Delete?' ]);
+                    if($model->id != $this->context->businessId){
+                        $label .= Html::a('Delete',['business/delete', 'id'=>$model->id], ['class'=>'btn btn-danger', 'data-confirm' => 'Confirm Delete?' ]);
+                    }
                 }
 
                 return '<div class="btn-group">' . $label . '</div>';
