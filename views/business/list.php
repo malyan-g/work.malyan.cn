@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'format' => 'raw',
             'enableSorting'=>false,
             'value' => function($model){
-                $label = Html::a('View', ['business/view', 'id'=>$model->id], ['class'=>'btn btn-info']);
+                $label = Html::a('View', ['business/view', 'id'=>$model->id], ['class'=>'btn btn-info', 'target' => '_blank']);
                 if($this->context->userId == $model->user_id){
                     $label .= Html::a('Update', ['business/update', 'id'=>$model->id], ['class'=>'btn btn-warning', 'target' => '_blank']);
                     $label .= Html::a('Delete',['business/delete', 'id'=>$model->id], ['class'=>'btn btn-danger', 'data-confirm' => 'Confirm Delete?' ]);
