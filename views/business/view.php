@@ -14,8 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="business-header">
     <span class="business-title rt-mrt"><?= Html::encode($model->title) ?></span>
-    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-    <span><?= date('Y-m-d H:i:s', $model->created_at) ?></span>
+    <span>[<?= date('Y-m-d H:i:s', $model->created_at) ?>]</span>
 </div>
 <div class="business-content">
     <?= $model->content ?>
