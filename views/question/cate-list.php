@@ -34,7 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     $label .= Html::a('Delete',['question/cate-delete', 'id'=>$model->id], ['class'=>'btn btn-danger', 'data-confirm' => 'Confirm Delete?' ]);
                 }
 
-                return '<div class="btn-group">' . $label . '</div>';
+                return '<div>' . $label . '</div>';
             }
         ]
     ]

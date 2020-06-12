@@ -46,7 +46,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     }
                 }
 
-                return '<div class="btn-group">' . $label . '</div>';
+                return '<div>' . $label . '</div>';
             }
         ]
     ]
