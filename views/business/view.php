@@ -9,6 +9,7 @@
 use yii\bootstrap\Html;
 
 $this->title = 'Business View';
+$this->params['breadcrumbs'][] = ['label' => 'Business List', 'url' => ['business/list']];
 $this->params['breadcrumbs'][] = $this->title;
 
 ?>
