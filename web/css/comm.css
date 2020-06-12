@@ -57,3 +57,19 @@
 .modal-content img{
     width: 100%;
 }
+
+.business-header{
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+ }
+
+.business-title{
+    font-size: 24px;
+}
+
+.business-content img{
+    width: 100%;
+}

@@ -12,13 +12,11 @@ $this->title = 'Business View';
 $this->params['breadcrumbs'][] = $this->title;
 
 ?>
-<h3>
-    <?= Html::encode($model->title) ?>
-    <h5>
-        <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-        <span><?= date('Y-m-d H:i:s', $model->created_at) ?></span>
-    </h5>
-</h3>
-<div class="modal-question-content">
+<div class="business-header">
+    <span class="business-title rt-mrt"><?= Html::encode($model->title) ?></span>
+    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+    <span><?= date('Y-m-d H:i:s', $model->created_at) ?></span>
+</div>
+<div class="business-content">
     <?= $model->content ?>
 </div>
