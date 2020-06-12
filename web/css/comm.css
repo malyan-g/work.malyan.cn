@@ -8,7 +8,7 @@
 }
 
 .modal-question-content img{
-    width: 100%;
+    max-width: 100%;
 }
 
 .ranking-list{
