@@ -22,6 +22,16 @@ class BusinessSearch extends Business
     /**
      * @inheritdoc
      */
+    public function rules()
+    {
+        return [
+            [['title'], 'string', 'max' => 200]
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
     public function scenarios()
     {
         return Model::scenarios();
