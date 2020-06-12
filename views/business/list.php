@@ -22,6 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'id',
         [
             'attribute'=>'title',
+            'format' => 'raw',
             'contentOptions' => ['style'=>'max-width:240px;'],
             'value' => function($model){
                 return str_replace($model->title, $this->context->keywords, "<span style='color: red'>" . $this->context->keywords. "</span>");
