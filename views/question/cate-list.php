@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'value' => function($model){
                 $label = '';
                 if($this->context->userId == $model->user_id){
-                    $label = Html::a('Update', ['question/cate-update', 'id'=>$model->id], ['class'=>'btn btn-warning', 'target' => '_blank']);
+                    $label = Html::a('Update', ['question/cate-update', 'id'=>$model->id], ['class'=>'btn btn-warning rt-mrt', 'target' => '_blank']);
                     $label .= Html::a('Delete',['question/cate-delete', 'id'=>$model->id], ['class'=>'btn btn-danger', 'data-confirm' => 'Confirm Delete?' ]);
                 }
 

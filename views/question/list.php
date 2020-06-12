@@ -33,9 +33,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'format' => 'raw',
             'enableSorting'=>false,
             'value' => function($model){
-                $label = Html::a('View', 'javascript:void(0)', ['class'=>'btn btn-info question-modal', 'data-toggle' => 'modal', 'data-target' => '#question-modal', 'data-id' => $model->id]);
+                $label = Html::a('View', 'javascript:void(0)', ['class'=>'btn btn-info rt-mrt question-modal', 'data-toggle' => 'modal', 'data-target' => '#question-modal', 'data-id' => $model->id]);
                 if($this->context->userId == $model->user_id){
-                    $label .= Html::a('Update', ['question/update', 'id'=>$model->id], ['class'=>'btn btn-warning', 'target' => '_blank']);
+                    $label .= Html::a('Update', ['question/update', 'id'=>$model->id], ['class'=>'btn btn-warning rt-mrt', 'target' => '_blank']);
                     $label .= Html::a('Delete',['question/delete', 'id'=>$model->id], ['class'=>'btn btn-danger', 'data-confirm' => 'Confirm Delete?' ]);
                 }
 
