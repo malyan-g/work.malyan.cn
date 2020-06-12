@@ -43,7 +43,7 @@ class BusinessSearch extends Business
      */
     public function search(Array $params)
     {
-        $query = self::find()->where(['status' => 1]);
+        $query = self::find()->where(['status' => 1])->orderBy(['created_at' => SORT_DESC]);
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -52,9 +52,13 @@ class BusinessSearch extends Business
             ],
         ]);
 
-        $query->andFilterWhere(['like', 'title', $this->title]);
+        $this->load($params);
 
-        $query->orderBy(['created_at' => SORT_DESC]);
+        if(!$this->validate()) {
+            return $dataProvider;
+        }
+
+        $query->andFilterWhere(['like', 'title', $this->title]);
 
         return $dataProvider;
     }
