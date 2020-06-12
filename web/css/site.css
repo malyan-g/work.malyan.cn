@@ -206,3 +206,12 @@ table, img {
     border-top: 2px solid #35b558;
     box-shadow: 3px 3px 3px #eee;
 }
+
+.navbar .navbar-nav > .active > a, .navbar .navbar-nav > .active > a:hover, .navbar .navbar-nav > .active > a:focus {
+    background-color: #35b558;
+    color: #fff;
+}
+
+.navbar .navbar-nav > .active > a {
+    background: #35b558 none repeat scroll 0 0;
+}
