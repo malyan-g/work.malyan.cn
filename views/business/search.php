@@ -18,7 +18,14 @@ use yii\bootstrap\ActiveForm;
         'template' => "{label} {input}",
     ]
 ]) ?>
-<?= $form->field($searchModel, 'title', ['options' => ['class' => 'form-group rt-mrt']]) ?>
+<?= $form->field($searchModel, 'title',
+    [
+        'options' => ['class' => 'form-group rt-mrt',
+         'inputOption' => [
+             "autocomplete" =>"off"
+         ]
+    ]
+])->label('关键词') ?>
 <div class="form-group">
     <?= Html::submitButton('Search', ['class' => 'btn btn-default']) ?>
 </div>
