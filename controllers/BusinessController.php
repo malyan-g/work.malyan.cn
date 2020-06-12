@@ -99,7 +99,6 @@ class BusinessController extends Controller
      */
     public function actionView()
     {
-        $this->layout = false;
         $model = $this->findModel();
 
         return $this->render('view', [
