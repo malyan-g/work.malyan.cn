@@ -147,7 +147,7 @@ EOD;
         $this->form->field($this->model, $endDate, [
             'template' => '{label}{input}<span class="glyphicon glyphicon-calendar form-control-feedback" aria-hidden="true"></span>',
             'options' => [
-                'class' => 'form-group has-feedback',
+                'class' => 'form-group has-feedback rt-mrt',
             ],
             'inputOptions' => [
                 'class' => 'form-control',

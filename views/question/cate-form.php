@@ -21,5 +21,3 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= Html::submitButton($isNewRecord ? 'Create' : 'Update', ['class' => $isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
 </div>
 <?php ActiveForm::end() ?>
-
-

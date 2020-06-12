@@ -14,7 +14,6 @@ use app\widgets\Laydate;
 ?>
 <?php $form = ActiveForm::begin(['options' => ['class' => 'form-inline btn-toolbar'], 'method' => 'get']) ?>
 <?=  Laydate::widget(['form' => $form, 'model' => $searchModel, 'label' => '日期：', 'startDate' => 'startDate', 'endDate' => 'endDate']) ?>
-&nbsp;
 <div class="form-group">
     <?= Html::submitButton('Search', ['class' => 'btn btn-default']) ?>
 </div>
