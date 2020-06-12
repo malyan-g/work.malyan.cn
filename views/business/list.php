@@ -30,6 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 return $title;
             }
         ],
+        'sort',
         'created_at:datetime',
         [
             'attribute' => 'id',

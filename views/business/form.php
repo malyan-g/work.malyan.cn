@@ -25,6 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'lang' =>'zh-cn', //中文为 zh-cn
     ]
 ]) ?>
+<?= $form->field($model, 'sort') ?>
 <div class="form-group">
     <?= Html::submitButton($isNewRecord ? 'Create' : 'Update', ['class' => $isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
 </div>

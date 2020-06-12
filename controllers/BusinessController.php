@@ -127,6 +127,8 @@ class BusinessController extends Controller
                     $this->exception('Illegal Request');
                 }
             }
+        }else{
+            $model->sort = 0;
         }
         $request = Yii::$app->request;
         if($request->isPost){
