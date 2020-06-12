@@ -64,6 +64,7 @@
     font-weight: 500;
     line-height: 1.1;
     color: inherit;
+    border-bottom: 1px dashed #f3f3f3;
  }
 
 .business-title{
