@@ -72,6 +72,10 @@
     font-size: 24px;
 }
 
+.business-content{
+    padding-top: 12px;
+}
+
 .business-content img{
     width: 100%;
 }
