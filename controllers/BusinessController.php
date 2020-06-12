@@ -29,9 +29,9 @@ class BusinessController extends Controller
                 'config' => [
                     "imageUrlPrefix"  => "https://work.malyan.cn",//图片访问路径前缀
                     "imagePathFormat" => "/upload/image/{yyyy}{mm}{dd}/{time}{rand:6}", //上传保存路径
-                    "imageMaxSize"            => 8184000,
-                    "imageCompressEnable"     => false,
-                    "imageCompressBorder"     => 3200,
+                    "imageMaxSize"            => 4096000,
+                    //"imageCompressEnable"     => false,
+                    //"imageCompressBorder"     => 3200,
                 ]
             ]
         ];
