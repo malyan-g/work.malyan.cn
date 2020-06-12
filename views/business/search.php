@@ -20,7 +20,7 @@ use yii\bootstrap\ActiveForm;
 ]) ?>
 <?= $form->field($searchModel, 'title', [
     'options' => ['class' => 'form-group rt-mrt'],
-    'inputOption' => [
+    'inputOptions' => [
         "autocomplete" =>"off"
     ]
 ])->label('关键词') ?>
