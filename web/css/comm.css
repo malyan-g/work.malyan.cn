@@ -9,6 +9,7 @@
 
 .modal-question-content img{
     max-width: 100%;
+    vertical-align: middle;
 }
 
 .ranking-list{
@@ -56,6 +57,7 @@
 
 .modal-content img{
     max-width: 100%;
+    vertical-align: middle;
 }
 
 .business-header{
