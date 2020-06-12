@@ -82,9 +82,9 @@ class BusinessController extends Controller
         if($model->user_id == $this->userId){
             $model->status = 0;
             if($model->save(false)){
-                $this->alert('Question Delete Successfully', self::ALERT_SUCCESS);
+                $this->alert('Business Delete Successfully', self::ALERT_SUCCESS);
             }else{
-                $this->alert('Question Delete Failure');
+                $this->alert('Business Delete Failure');
             }
             return $this->redirect(Yii::$app->request->referrer);
         }else{
@@ -127,7 +127,7 @@ class BusinessController extends Controller
                if($model->save(false)){
                     $this->alert($isNewRecord ? 'Business Create Successfully' : 'Business Update Successfully', self::ALERT_SUCCESS);
                     if($isNewRecord){
-                        return $this->redirect(['question/create']);
+                        return $this->redirect(['business/create']);
                     }
             }else{
                 $this->alert($isNewRecord ? 'Business Create Failure' : 'Business Update Failure');
