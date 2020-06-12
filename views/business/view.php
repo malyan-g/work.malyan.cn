@@ -13,10 +13,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
 ?>
 <h3><?= Html::encode($model->title) ?></h3>
-<div>
+<h6>
     <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
     <span><?= date('Y-m-d H:i:s', $model->created_at) ?></span>
-</div>
+</h6>
 <div class="modal-question-content">
     <?= $model->content ?>
 </div>
