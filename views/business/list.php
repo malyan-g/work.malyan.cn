@@ -25,7 +25,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'format' => 'raw',
             'contentOptions' => ['style'=>'max-width:240px;'],
             'value' => function($model){
-                return str_replace($model->title, $this->context->keywords, "<span style='color: red'>" . $this->context->keywords. "</span>");
+                $title = $model->title;
+                if($this->context->keywords){
+                    $title = str_replace($title, $this->context->keywords, "<span style='color: red'>" . $this->context->keywords. "</span>");
+                }
+                return $title;
             }
         ],
         'created_at:datetime',
