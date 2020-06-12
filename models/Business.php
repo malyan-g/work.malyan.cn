@@ -12,6 +12,7 @@ use Yii;
  * @property string $content 内容
  * @property int $user_id 创建人
  * @property int $status 状态
+ * @property int $sort 排序
  * @property int $created_at 创建时间
  */
 class Business extends \yii\db\ActiveRecord
@@ -32,7 +33,7 @@ class Business extends \yii\db\ActiveRecord
         return [
             [['title', 'content'], 'required'],
             [['content'], 'string'],
-            [['created_at'], 'integer'],
+            [['sort', 'created_at'], 'integer'],
             [['title'], 'string', 'max' => 200],
             [['user_id'], 'integer', 'max' => 9999],
             [['status'], 'integer', 'max' => 1],
@@ -50,6 +51,7 @@ class Business extends \yii\db\ActiveRecord
             'content' => '内容',
             'user_id' => '创建人',
             'status' => '状态',
+            'sort' => '排序',
             'created_at' => '创建时间',
         ];
     }

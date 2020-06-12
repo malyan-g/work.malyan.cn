@@ -43,7 +43,7 @@ class BusinessSearch extends Business
      */
     public function search(Array $params)
     {
-        $query = self::find()->where(['status' => 1])->orderBy(['created_at' => SORT_DESC]);
+        $query = self::find()->where(['status' => 1])->orderBy(['sort'=> SORT_DESC, 'created_at' => SORT_DESC]);
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
