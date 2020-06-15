@@ -130,7 +130,6 @@ a.desc:after {
 }
 
 .c-table {
-    width: 480px;
     max-width: 100%;
     border-collapse: collapse;
     border-spacing: 0;

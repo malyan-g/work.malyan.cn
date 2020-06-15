@@ -12,7 +12,7 @@ use app\widgets\Laydate;
 /* @var $searchModel \app\models\search\QuestionSearch */
 
 ?>
-<?php $form = ActiveForm::begin(['options' => ['class' => 'form-inline btn-toolbar'], 'method' => 'get']) ?>
+<?php $form = ActiveForm::begin(['options' => ['class' => 'form-inline'], 'method' => 'get']) ?>
 <?=  Laydate::widget(['form' => $form, 'model' => $searchModel, 'label' => '日期：', 'startDate' => 'startDate', 'endDate' => 'endDate']) ?>
 <div class="form-group">
     <?= Html::submitButton('Search', ['class' => 'btn btn-default']) ?>
