@@ -131,6 +131,7 @@ a.desc:after {
 
 .c-table {
     width: 480px;
+    max-width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
 }
@@ -192,6 +193,10 @@ table, img {
     font-size: 13px;
     border-bottom: 1px solid #f3f3f3;
     text-align: left;
+}
+
+.c-table .opr-toplist1-right-hot{
+    margin-right: 8px;
 }
 
 .modal-dialog{position: absolute; top: 0; bottom: 0; left: 0; right: 0;width: 80%;}
