@@ -195,8 +195,8 @@ table, img {
     text-align: left;
 }
 
-.c-table .opr-toplist1-right-hot{
-    margin-right: 8px;
+.opr-toplist1-right-hot{
+    padding-right: 8px;
 }
 
 .modal-dialog{position: absolute; top: 0; bottom: 0; left: 0; right: 0;width: 80%;}
