@@ -18,6 +18,7 @@ if($searchModel->endDate){
     $routeData['QuestionSearch[endDate]'] = $searchModel->endDate;
 }
 
+$count = count($data);
 ?>
 <?= $this->render('search', ['searchModel' => $searchModel]) ?>
 <P></P>
@@ -29,21 +30,29 @@ if($searchModel->endDate){
         </td>
         <td class="opr-toplist1-right">
             <strong>
-                Number <span class="badge"><?= $total ?></span>
+                Number <span class="badge"><?= $count ? $total : '' ?></span>
             </strong></td>
     </tr>
-        <?php foreach ($data as $key => $value): ?>
-        <tr>
-            <td>
-                <span>
-                    <span class="c-index  c-index-hot<?= $key < 3 ?$key+1 : '' ?> c-gap-icon-right-small"><?= $key+1 ?></span>
-                    <a href="<?= Url::toRoute(array_merge($routeData, ['QuestionSearch[cate_id]' => $value['cate_id']]))?>" class="opr-toplist1-cut question-modal" target="_blank"><?= Html::encode($value['cate']['question_name']) ?></a>
-                </span>
-            </td>
-            <td class="opr-toplist1-right opr-toplist1-right-hot">
-                <?= Html::encode($value['total']) ?><i class="opr-toplist1-st c-icon "></i>
-            </td>
-        </tr>
-        <?php endforeach; ?>
+        <?php if($count > 0): ?>
+            <?php foreach ($data as $key => $value): ?>
+            <tr>
+                <td>
+                    <span>
+                        <span class="c-index  c-index-hot<?= $key < 3 ?$key+1 : '' ?> c-gap-icon-right-small"><?= $key+1 ?></span>
+                        <a href="<?= Url::toRoute(array_merge($routeData, ['QuestionSearch[cate_id]' => $value['cate_id']]))?>" class="opr-toplist1-cut question-modal" target="_blank"><?= Html::encode($value['cate']['question_name']) ?></a>
+                    </span>
+                </td>
+                <td class="opr-toplist1-right opr-toplist1-right-hot">
+                    <?= Html::encode($value['total']) ?><i class="opr-toplist1-st c-icon "></i>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <tr>
+                <td>
+                    No results found.
+                </td>
+            </tr>
+        <?php endif; ?>
     </tbody>
 </table>
