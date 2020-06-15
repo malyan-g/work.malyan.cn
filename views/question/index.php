@@ -49,7 +49,7 @@ $count = count($data);
             <?php endforeach; ?>
         <?php else: ?>
             <tr>
-                    <span>No results found.</span>
+                    <td style="border: 0">No results found.</td>
             </tr>
         <?php endif; ?>
     </tbody>
