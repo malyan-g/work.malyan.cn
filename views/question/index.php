@@ -52,6 +52,7 @@ $count = count($data);
                 <td>
                     No results found.
                 </td>
+                <td></td>
             </tr>
         <?php endif; ?>
     </tbody>
