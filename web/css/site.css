@@ -130,13 +130,14 @@ a.desc:after {
 }
 
 .c-table {
-    width: 480px;
-    max-width: 750px;
+    width: 40%;
+    min-width: 375px;
     border-collapse: collapse;
     border-spacing: 0;
 }
 
 .c-table tr {
+    width: 100%;
     display: table-row;
     vertical-align: inherit;
     border-color: inherit;
