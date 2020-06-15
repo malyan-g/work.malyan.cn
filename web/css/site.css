@@ -130,14 +130,12 @@ a.desc:after {
 }
 
 .c-table {
-    width: 40%;
-    min-width: 375px;
+    width: 480px;
     border-collapse: collapse;
     border-spacing: 0;
 }
 
 .c-table tr {
-    width: 100%;
     display: table-row;
     vertical-align: inherit;
     border-color: inherit;
@@ -197,7 +195,7 @@ table, img {
 }
 
 .opr-toplist1-right-hot{
-    padding-right: 8px;
+    margin-right: 8px;
 }
 
 .modal-dialog{position: absolute; top: 0; bottom: 0; left: 0; right: 0;width: 80%;}
