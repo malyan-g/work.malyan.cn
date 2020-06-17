@@ -6,4 +6,4 @@ use yii\helpers\Html;
 $this->title = 'Task List';
 $routeData = ['task/index'];
 ?>
-<?= \yii2fullcalendar\yii2fullcalendar::widget(['events'=> $events]);
+<?= \yii2fullcalendar\yii2fullcalendar::widget(['events' => $events]);
