@@ -7,8 +7,8 @@ namespace Composer\Autoload;
 class ComposerStaticInitd7e61d95499cf9940a1e6518cbbb281d
 {
     public static $files = array (
-        '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
@@ -19,14 +19,12 @@ class ComposerStaticInitd7e61d95499cf9940a1e6518cbbb281d
         'y' => 
         array (
             'yii\\swiftmailer\\' => 16,
-            'yii\\jui\\' => 8,
             'yii\\gii\\' => 8,
             'yii\\faker\\' => 10,
             'yii\\debug\\' => 10,
             'yii\\composer\\' => 13,
             'yii\\bootstrap\\' => 14,
             'yii\\' => 4,
-            'yii2fullcalendar\\' => 17,
         ),
         'p' => 
         array (
@@ -87,10 +85,6 @@ class ComposerStaticInitd7e61d95499cf9940a1e6518cbbb281d
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2-swiftmailer',
         ),
-        'yii\\jui\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/yiisoft/yii2-jui',
-        ),
         'yii\\gii\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2-gii',
@@ -114,10 +108,6 @@ class ComposerStaticInitd7e61d95499cf9940a1e6518cbbb281d
         'yii\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2',
-        ),
-        'yii2fullcalendar\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/philippfrenzel/yii2fullcalendar',
         ),
         'phpDocumentor\\Reflection\\' => 
         array (
