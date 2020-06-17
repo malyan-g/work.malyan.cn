@@ -68,6 +68,7 @@ $config = [
                 'business-update' => 'business/update',
                 'business-delete' => 'business/delete',
                 'business-view' => 'business/view',
+                'task' => 'task/index',
             ],
         ],
     ],
