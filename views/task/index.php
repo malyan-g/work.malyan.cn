@@ -3,7 +3,7 @@
 use yii\helpers\Url;
 use yii\web\JsExpression;
 
-$this->title = 'Task';
+$this->title = 'Daily Tasks';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <?= \yii2fullcalendar\yii2fullcalendar::widget([
