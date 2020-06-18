@@ -96,6 +96,7 @@ class TaskController extends Controller
                 if($val['date'] == 'max'){
                     $val['date'] = $maxDate;
                 }
+
                 if($startDate == $date){
                     if(intval($val['date']) >= intval($startDay)){
                         $_date = date('Y-m', strtotime($date. '01'));
@@ -122,7 +123,7 @@ class TaskController extends Controller
             }
 
             if($date < $endDate){
-                $date = intval(date('Ym', strtotime($date . ' + 1 month')));
+                $date = intval(date('Ym', strtotime($date . '01 + 1 month')));
             }else{
                 $i = true;
             }
