@@ -69,7 +69,7 @@ $config = [
                 'business-delete' => 'business/delete',
                 'business-view' => 'business/view',
                 'task' => 'task/index',
-                'task-list' => 'task/list',
+                'task-data' => 'task/task-data',
             ],
         ],
     ],

@@ -22,47 +22,127 @@ class TaskController extends Controller
      */
     public function actionIndex()
     {
-
-        echo date('Y-m-d\TH:i:s\Z',strtotime('tomorrow 6am'));
-        die;
         return $this->render('index');
     }
 
     /**
+     * 日常任务数据
      * @return array
      */
-    public function actionTaskList()
+    public function actionTaskData()
     {
-
         Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-        $times = [];
-        $times[] = [
-            'id' => 1,
-            'title' => '预出账',
-            'startDate' => strtotime(date('Y-m-25 22:00:00')),
-            'endDate' => strtotime(date('Y-m-26 23:59:59'))
+        $data = Yii::$app->request->getQueryParams();
+        $taskData = [
+            [
+                'id' => 1,
+                'title' => '预出账资料准备',
+                'date' => 25,
+                'limit' => 1,
+                'startDate' => ' 22:00:00',
+                'endDate' => ' 00:00:00',
+                'color' => null
+            ],
+            [
+                'id' => 2,
+                'title' => '预出账',
+                'date' =>26,
+                'limit' => 0,
+                'startDate' => ' 08:30:00',
+                'endDate' => ' 18:00:00',
+                'color' => '#d9534f'
+            ],
+            [
+                'id' => 3,
+                'title' => '66彩铃月租',
+                'date' =>16,
+                'limit' => 0,
+                'startDate' => ' 08:30:00',
+                'endDate' => ' 18:00:00',
+                'color' => '#f0ad4e'
+            ],
+            [
+                'id' => 4,
+                'title' => '出账准备',
+                'date' => 'max',
+                'limit' => 1,
+                'startDate' => ' 08:30:00',
+                'endDate' => ' 00:00:00',
+                'color' => null
+            ],
+            [
+                'id' => 5,
+                'title' => '出账',
+                'date' => 1,
+                'limit' => 0,
+                'startDate' => ' 00:00:00',
+                'endDate' => ' 08:00:00',
+                'color' => '#d9534f'
+            ]
         ];
 
-        $times[] = [
-            'id' => 2,
-            'title' => '66彩铃月租',
-            'startDate' => strtotime(date('Y-m-16 08:00:00')),
-            'endDate' => strtotime(date('Y-m-16 23:59:59'))
-        ];
+        $i = false;
+        $start = strtotime($data['start']);
+        $end = strtotime($data['end']);
+        $startDate = intval(date('Ym', $start));
+        $endDate = intval(date('Ym', $end));
+        $startDay = date('d', $start);
+        $endDay = date('d', $end);
+        $date = $startDate;
+        $taskList = [];
+        while ($i === false){
+            $maxDate = date('d', strtotime($date . "01 +1 month -1 day"));
+            foreach ($taskData as $val){
+                if($val['date'] == 'max'){
+                    $val['date'] = $maxDate;
+                }
+                if($startDate == $date){
+                    if(intval($val['date']) >= intval($startDay)){
+                        $_date = date('Y-m', strtotime($date. '01'));
+                        $_sDate = $val['date'] > 9 ? $val['date'] : '0' . strval($val['date']);
+                        $val['startDate'] = $_date . '-' . $_sDate . $val['startDate'];
+                        $val['endDate'] = $val['limit'] > 0 ? date('Y-m-d', strtotime($_date . '-' . $_sDate . " + " . $val['limit'] . "day")) . $val['endDate']: $_date . '-' . $_sDate . $val['endDate'];
+                        $taskList[] = $val;
+                    }
+                }elseif($endDate == $date){
+                    if(intval($val['date']) <= intval($endDay)){
+                        $_date = date('Y-m', strtotime($date. '01'));
+                        $_sDate = $val['date'] > 9 ? $val['date'] : '0' . strval($val['date']);
+                        $val['startDate'] = $_date . '-' . $_sDate . $val['startDate'];
+                        $val['endDate'] = $val['limit'] > 0 ? date('Y-m-d', strtotime($_date . '-' . $_sDate . " + " . $val['limit'] . "day")) . $val['endDate']: $_date . '-' . $_sDate . $val['endDate'];
+                        $taskList[] = $val;
+                    }
+                }else{
+                    $_date = date('Y-m', strtotime($date. '01'));
+                    $_sDate = $val['date'] > 9 ? $val['date'] : '0' . strval($val['date']);
+                    $val['startDate'] = $_date . '-' . $_sDate . $val['startDate'];
+                    $val['endDate'] = $val['limit'] > 0 ? date('Y-m-d', strtotime($_date . '-' . $_sDate . " + " . $val['limit'] . "day")) . $val['endDate']: $_date . '-' . $_sDate . $val['endDate'];
+                    $taskList[] = $val;
+                }
+            }
+
+            if($date < $endDate){
+                $date = intval(date('Ym', strtotime($date . ' + 1 month')));
+            }else{
+                $i = true;
+            }
+        }
 
         $events = [];
 
-        foreach ($times AS $time){
-            $Event = new \yii2fullcalendar\models\Event();
-            $Event->id = $time->id;
-            $Event->title = $time->title;
-            $Event->nonstandard = [
+        $Event = new \yii2fullcalendar\models\Event();
+        foreach ($taskList as $task){
+            $_Event = clone $Event;
+            $_Event->id = $task['id'];
+            $_Event->title = $task['title'];
+            $_Event->nonstandard = [
                 'field1' => 'Something I want to be included in object #1',
                 'field2' => 'Something I want to be included in object #2',
             ];
-            $Event->start = date('Y-m-d\TH:i:s\Z',strtotime($time->startDate));
-            $Event->end = date('Y-m-d\TH:i:s\Z',strtotime($time->endDate));
-            $events[] = $Event;
+            $_Event->start = $task['startDate'];
+            $_Event->end = $task['endDate'];
+            $_Event->color = $task['color'];
+            $events[] = $_Event;
         }
 
         return $events;

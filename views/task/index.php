@@ -1,9 +1,35 @@
 <?php
 /* @var $this yii\web\View */
 use yii\helpers\Url;
-use yii\helpers\Html;
+use yii\web\JsExpression;
 
 $this->title = 'Task List';
 $routeData = ['task/index'];
 ?>
-<?= \yii2fullcalendar\yii2fullcalendar::widget(['events' => $events]);
+<?= \yii2fullcalendar\yii2fullcalendar::widget([
+    'options' => [
+        'lang' => 'zh-cn',
+    ],
+    'clientOptions' => [
+        'header' => [
+            'left'=>'prev,next today',
+            'right'=>'month,agendaWeek,agendaDay,listMonth'
+        ],
+        'selectable' => true,
+        'selectHelper' => true,
+        'droppable' => true,
+        'editable' => true,
+        //'defaultDate' => date('Y-m-d'),
+        //'nowIndicator' => true,
+        //'fixedWeekCount' => false,
+        //'weekNumbers' => true,
+        //'weekNumbersWithinDays' => true,
+        //'titleFormat' => 'YYYY MMMM',
+        'displayEventTime' => true,
+        'displayEventEnd' => true,
+        'timeFormat' => 'HH:mm'
+    ],
+    //'themeSystem' => 'standard',
+    'events' => Url::to(['task/task-data'])
+]);
+
