@@ -41,14 +41,14 @@ AppAsset::register($this);
         'items' => [
             ['label' => 'Business List', 'url' => ['business/list']],
             ['label' => 'Question List', 'url' => ['question/list']],
-            ['label' => 'Cate List', 'url' => ['question/cate-list']],
-            ['label' => 'Task', 'url' => ['task/index']]
+            ['label' => 'Cate List', 'url' => ['question/cate-list']]
         ]
     ]);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Question Ranking', 'url' => ['question/index']],
+            ['label' => 'Task', 'url' => ['task/index']]
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
             ) : (
