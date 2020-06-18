@@ -4,6 +4,7 @@ use yii\helpers\Url;
 use yii\web\JsExpression;
 
 $this->title = 'Task';
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 <?= \yii2fullcalendar\yii2fullcalendar::widget([
     'options' => [
