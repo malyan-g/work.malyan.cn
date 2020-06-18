@@ -41,7 +41,8 @@ AppAsset::register($this);
         'items' => [
             ['label' => 'Business List', 'url' => ['business/list']],
             ['label' => 'Question List', 'url' => ['question/list']],
-            ['label' => 'Cate List', 'url' => ['question/cate-list']]
+            ['label' => 'Cate List', 'url' => ['question/cate-list']],
+            ['label' => 'Task', 'url' => ['task/index']]
         ]
     ]);
     echo Nav::widget([

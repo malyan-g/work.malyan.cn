@@ -3,8 +3,7 @@
 use yii\helpers\Url;
 use yii\web\JsExpression;
 
-$this->title = 'Task List';
-$routeData = ['task/index'];
+$this->title = 'Task';
 ?>
 <?= \yii2fullcalendar\yii2fullcalendar::widget([
     'options' => [
