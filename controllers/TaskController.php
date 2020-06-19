@@ -132,8 +132,6 @@ class TaskController extends Controller
         $Event->start = $_date . '-' . $_sDate . $val['startDate'];
         $Event->end = $val['limit'] > 0 ? date('Y-m-d', strtotime($_date . '-' . $_sDate . " + " . $val['limit'] . "day")) . $val['endDate']: $_date . '-' . $_sDate . $val['endDate'];
 
-        $Event->color = $val['color'];
-
         $nowDate = time();
         $_start = strtotime($Event->start);
         $_end = strtotime($Event->end);
