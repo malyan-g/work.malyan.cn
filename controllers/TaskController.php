@@ -89,36 +89,19 @@ class TaskController extends Controller
         $startDay = date('d', $start);
         $endDay = date('d', $end);
         $date = $startDate;
-        $taskList = [];
+        $events = [];
         while ($i === false){
             $maxDate = date('d', strtotime($date . "01 +1 month -1 day"));
             foreach ($taskData as $val){
                 if($val['date'] == 'max'){
                     $val['date'] = $maxDate;
                 }
-
-                if($startDate == $date){
-                    if(intval($val['date']) >= intval($startDay)){
-                        $_date = date('Y-m', strtotime($date. '01'));
-                        $_sDate = $val['date'] > 9 ? $val['date'] : '0' . strval($val['date']);
-                        $val['startDate'] = $_date . '-' . $_sDate . $val['startDate'];
-                        $val['endDate'] = $val['limit'] > 0 ? date('Y-m-d', strtotime($_date . '-' . $_sDate . " + " . $val['limit'] . "day")) . $val['endDate']: $_date . '-' . $_sDate . $val['endDate'];
-                        $taskList[] = $val;
-                    }
-                }elseif($endDate == $date){
-                    if(intval($val['date']) <= intval($endDay)){
-                        $_date = date('Y-m', strtotime($date. '01'));
-                        $_sDate = $val['date'] > 9 ? $val['date'] : '0' . strval($val['date']);
-                        $val['startDate'] = $_date . '-' . $_sDate . $val['startDate'];
-                        $val['endDate'] = $val['limit'] > 0 ? date('Y-m-d', strtotime($_date . '-' . $_sDate . " + " . $val['limit'] . "day")) . $val['endDate']: $_date . '-' . $_sDate . $val['endDate'];
-                        $taskList[] = $val;
-                    }
-                }else{
-                    $_date = date('Y-m', strtotime($date. '01'));
-                    $_sDate = $val['date'] > 9 ? $val['date'] : '0' . strval($val['date']);
-                    $val['startDate'] = $_date . '-' . $_sDate . $val['startDate'];
-                    $val['endDate'] = $val['limit'] > 0 ? date('Y-m-d', strtotime($_date . '-' . $_sDate . " + " . $val['limit'] . "day")) . $val['endDate']: $_date . '-' . $_sDate . $val['endDate'];
-                    $taskList[] = $val;
+                if($startDate == $date && intval($val['date']) >= intval($startDay)){
+                    $events[] = $this->getTask($val, $date);
+                }elseif($endDate == $date && intval($val['date']) <= intval($endDay)){
+                    $events[] = $this->getTask($val, $date);
+                }elseif($startDate > $date && $endDate <= $date){
+                    $events[] = $this->getTask($val, $date);
                 }
             }
 
@@ -129,23 +112,40 @@ class TaskController extends Controller
             }
         }
 
-        $events = [];
+        return $events;
+    }
+
+    protected function getTask($val, $date)
+    {
+        $_date = date('Y-m', strtotime($date. '01'));
+        $_sDate = $val['date'] > 9 ? $val['date'] : '0' . strval($val['date']);
 
         $Event = new \yii2fullcalendar\models\Event();
-        foreach ($taskList as $task){
-            $_Event = clone $Event;
-            $_Event->id = $task['id'];
-            $_Event->title = $task['title'];
-            $_Event->nonstandard = [
-                'field1' => 'Something I want to be included in object #1',
-                'field2' => 'Something I want to be included in object #2',
-            ];
-            $_Event->start = $task['startDate'];
-            $_Event->end = $task['endDate'];
-            $_Event->color = $task['color'];
-            $events[] = $_Event;
+        $Event->title = $val['title'];
+        $Event->nonstandard = [
+            'field1' => 'Something I want to be included in object #1',
+            'field2' => 'Something I want to be included in object #2',
+        ];
+
+        $Event->start = $_date . '-' . $_sDate . $val['startDate'];
+        $Event->end = $val['limit'] > 0 ? date('Y-m-d', strtotime($_date . '-' . $_sDate . " + " . $val['limit'] . "day")) . $val['endDate']: $_date . '-' . $_sDate . $val['endDate'];
+
+        $Event->color = $val['color'];
+
+        $nowDate = time();
+        $_start = strtotime($Event->start);
+        $_end = strtotime($Event->end);
+        $Event->id = date('Ymd', $_start) . $_sDate;
+        if(($_end + 3600 * 24 * 7) < $nowDate){
+            $Event->color = '#5bc0de';
+        }elseif($_start < $nowDate && $_end > $nowDate){
+            $Event->color = '#5cb85c';
+        }elseif($_end < $nowDate && ($_end + 3600 * 24 * 7) >$nowDate ){
+            $Event->color = '#d9534f';
+        }else{
+            $Event->color = '#f0ad4e';
         }
 
-        return $events;
+        return $Event;
     }
 }
