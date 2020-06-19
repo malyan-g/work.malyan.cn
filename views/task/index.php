@@ -6,6 +6,18 @@ use yii\web\JsExpression;
 $this->title = 'Daily Tasks';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<div class="btn-group">
+    <button type="button" class="btn btn-info"></button>已执行
+</div>
+<div class="btn-group">
+    <button type="button" class="btn btn-success"></button>正在执行
+</div>
+<div class="btn-group">
+    <button type="button" class="btn btn-danger"></button>即将执行
+</div>
+<div class="btn-group">
+    <button type="button" class="btn btn-waring"></button>未执行
+</div>
 <?= \yii2fullcalendar\yii2fullcalendar::widget([
     'options' => [
         'lang' => 'zh-cn',
@@ -27,11 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
         //'titleFormat' => 'YYYY MMMM',
         'displayEventTime' => true,
         'displayEventEnd' => true,
-        'timeFormat' => 'HH:mm',
-        'footer' => [
-            'left' => 'title',
-            'titleFormat' => 'YYYY MMMM',
-        ]
+        'timeFormat' => 'HH:mm'
     ],
     //'themeSystem' => 'standard',
     'events' => Url::to(['task/task-data'])
