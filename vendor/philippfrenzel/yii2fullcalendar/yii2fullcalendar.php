@@ -199,11 +199,45 @@ class yii2fullcalendar extends elWidget
         if (!isset($this->options['class'])) {
             $this->options['class'] = 'fullcalendar';
         }
+        $HtmlContent = '
+        <div class="col-lg-3 visible-lg-block">
+            <div id="div_day_detail" class="h_calendar_alm">
+                <div class="alm_date"></div>
+                <div class="alm_content nofestival">
+                    <div class="today_icon"></div>
+                    <div class="today_date"></div>
+                    <p id="alm_cnD"></p>
+                    <p id="alm_cnY"></p>
+                    <p id="alm_cnA"></p>
+                    <div class="alm_lunar_date"></div>
+                </div>
+            </div>
+        <div>
+        <div class="task-group"">
+            <div class="btn-group btn-task">
+                <button type="button" class="btn btn-info"></button>已执行
+            </div>
+            <div class="btn-group btn-task">
+                <button type="button" class="btn btn-success"></button>正在执行
+            </div>
+            <div class="btn-group btn-task">
+                <button type="button" class="btn btn-danger"></button>即将执行
+            </div>
+            <div class="btn-group btn-task">
+                <button type="button" class="btn btn-warning"></button>未执行
+            </div>
+        </div>
+    </div>';
 
-        echo Html::beginTag('div', $this->options) . "\n";
-            echo Html::beginTag('div',['class'=>'fc-loading','style' => 'display:none;']);
-                echo Html::encode($this->loading);
+        echo Html::beginTag('div', ['class' => 'calendarWrapper']) . "\n";
+            echo Html::beginTag('div', ['class' => 'col-lg-9']) . "\n";
+                echo Html::beginTag('div', $this->options) . "\n";
+                    echo Html::beginTag('div',['class'=>'fc-loading','style' => 'display:none;']);
+                        echo Html::encode($this->loading);
+                    echo Html::endTag('div')."\n";
+                echo Html::endTag('div')."\n";
             echo Html::endTag('div')."\n";
+            echo $HtmlContent."\n";
         echo Html::endTag('div')."\n";
         $this->registerPlugin();
     }
@@ -274,8 +308,9 @@ class yii2fullcalendar extends elWidget
         $js[] = "jQuery('#$id').empty().append(loading_container);"; // remove/empty the calendar container and append loading container bakup
 
         $cleanOptions = $this->getClientOptions();
-        $js[] = "jQuery('#$id').fullCalendar($cleanOptions);";
 
+        $js[] = "jQuery('#$id').fullCalendar($cleanOptions);";
+        
         /**
         * Loads events separately from the calendar creation. Uncomment if you need this functionality.
         *
