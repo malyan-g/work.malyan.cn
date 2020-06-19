@@ -140,7 +140,7 @@ class TaskController extends Controller
             $Event->color = '#5bc0de';
         }elseif($_start < $nowDate && $_end > $nowDate){
             $Event->color = '#5cb85c';
-        }elseif($_end < $nowDate && ($_end + 3600 * 24 * 7) >$nowDate ){
+        }elseif($_end > $nowDate && ($_end - 3600 * 24 * 7) < $nowDate ){
             $Event->color = '#d9534f';
         }else{
             $Event->color = '#f0ad4e';
