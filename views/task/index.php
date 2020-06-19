@@ -12,8 +12,8 @@ $this->params['breadcrumbs'][] = $this->title;
     ],
     'clientOptions' => [
         'header' => [
-            'left'=>'prev,next today',
-            'right'=>'month,agendaWeek,agendaDay,listMonth'
+            'left' => 'prev,next today',
+            'right' => 'month,agendaWeek,agendaDay,listMonth'
         ],
         'selectable' => true,
         'selectHelper' => true,
@@ -29,7 +29,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'displayEventEnd' => true,
         'timeFormat' => 'HH:mm',
         'footer' => [
-            'left'=>'prev, test'
+            'left' => 'title',
+            'titleFormat' => 'YYYY MMMM',
         ]
     ],
     //'themeSystem' => 'standard',
