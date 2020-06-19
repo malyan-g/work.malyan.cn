@@ -136,7 +136,7 @@ class TaskController extends Controller
         $_start = strtotime($Event->start);
         $_end = strtotime($Event->end);
         $Event->id = date('Ymd', $_start) . $_sDate;
-        if(($_end + 3600 * 24 * 7) < $nowDate){
+        if($_end < $nowDate){
             $Event->color = '#5bc0de';
         }elseif($_start < $nowDate && $_end > $nowDate){
             $Event->color = '#5cb85c';
