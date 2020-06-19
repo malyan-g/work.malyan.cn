@@ -202,7 +202,10 @@ class yii2fullcalendar extends elWidget
         $HtmlContent = '
         <div class="col-lg-3 visible-lg-block">
             <div id="div_day_detail" class="h_calendar_alm">
-                <div class="alm_date"></div>
+                <div class="clock-div" style="background-color: #FFFFFF;text-align: center;margin-top: 5px;">
+                    <canvas id="clock" width="160px" height="160px">你的浏览器不是兼容canvas</canvas>
+                </div>
+                <div class="alm_date" style="background-color: #5cb85c;color: white"></div>
                 <div class="alm_content nofestival">
                     <div class="today_icon"></div>
                     <div class="today_date"></div>
@@ -310,7 +313,7 @@ class yii2fullcalendar extends elWidget
         $cleanOptions = $this->getClientOptions();
 
         $js[] = "jQuery('#$id').fullCalendar($cleanOptions);";
-        
+
         /**
         * Loads events separately from the calendar creation. Uncomment if you need this functionality.
         *
