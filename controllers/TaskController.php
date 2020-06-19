@@ -35,49 +35,46 @@ class TaskController extends Controller
         $data = Yii::$app->request->getQueryParams();
         $taskData = [
             [
-                'id' => 1,
+                'title' => '测试',
+                'date' => 19,
+                'limit' => 2,
+                'startDate' => ' 08:00:00',
+                'endDate' => ' 18:00:00'
+            ],
+            [
                 'title' => '预出账资料准备',
                 'date' => 25,
                 'limit' => 1,
                 'startDate' => ' 22:00:00',
-                'endDate' => ' 00:00:00',
-                'color' => null
+                'endDate' => ' 00:00:00'
             ],
             [
-                'id' => 2,
                 'title' => '预出账',
                 'date' =>26,
                 'limit' => 0,
                 'startDate' => ' 08:30:00',
-                'endDate' => ' 18:00:00',
-                'color' => '#d9534f'
+                'endDate' => ' 18:00:00'
             ],
             [
-                'id' => 3,
                 'title' => '66彩铃月租',
                 'date' =>16,
                 'limit' => 0,
                 'startDate' => ' 08:30:00',
                 'endDate' => ' 18:00:00',
-                'color' => '#f0ad4e'
             ],
             [
-                'id' => 4,
                 'title' => '出账准备',
                 'date' => 'max',
                 'limit' => 1,
                 'startDate' => ' 08:30:00',
-                'endDate' => ' 00:00:00',
-                'color' => null
+                'endDate' => ' 00:00:00'
             ],
             [
-                'id' => 5,
                 'title' => '出账',
                 'date' => 1,
                 'limit' => 0,
                 'startDate' => ' 00:00:00',
-                'endDate' => ' 08:00:00',
-                'color' => '#d9534f'
+                'endDate' => ' 08:00:00'
             ]
         ];
 
@@ -115,6 +112,11 @@ class TaskController extends Controller
         return $events;
     }
 
+    /**
+     * @param $val
+     * @param $date
+     * @return \yii2fullcalendar\models\Event
+     */
     protected function getTask($val, $date)
     {
         $_date = date('Y-m', strtotime($date. '01'));
