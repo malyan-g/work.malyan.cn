@@ -82,3 +82,14 @@
     max-width: 100%;
     vertical-align: middle;
 }
+
+.btn-task{
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+
+.btn-task button{
+    padding: 8px;
+    font-size:  12px;
+    margin-right: 5px;
+}
