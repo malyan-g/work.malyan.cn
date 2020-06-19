@@ -28,9 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'displayEventTime' => true,
         'displayEventEnd' => true,
         'timeFormat' => 'HH:mm',
-        'footer' => [
-            'left' => 'ad'
-        ]
+        'footer' => true
     ],
     //'themeSystem' => 'standard',
     'events' => Url::to(['task/task-data'])
