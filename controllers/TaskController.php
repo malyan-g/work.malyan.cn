@@ -97,7 +97,7 @@ class TaskController extends Controller
                     $events[] = $this->getTask($val, $date);
                 }elseif($endDate == $date && intval($val['date']) <= intval($endDay)){
                     $events[] = $this->getTask($val, $date);
-                }elseif($startDate > $date && $endDate <= $date){
+                }elseif($startDate < $date && $endDate > $date){
                     $events[] = $this->getTask($val, $date);
                 }
             }
