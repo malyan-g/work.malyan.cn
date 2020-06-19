@@ -29,9 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'displayEventEnd' => true,
         'timeFormat' => 'HH:mm',
         'footer' => [
-            'center'=>'title',
-            'left'=>'prev,next today',
-            'right'=>'month,agendaWeek'
+            'left'=>'prev, test'
         ]
     ],
     //'themeSystem' => 'standard',
