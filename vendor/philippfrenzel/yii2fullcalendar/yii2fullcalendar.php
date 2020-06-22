@@ -229,8 +229,7 @@ class yii2fullcalendar extends elWidget
             <div class="btn-group btn-task">
                 <button type="button" class="btn btn-warning"></button>未执行
             </div>
-        </div>
-    </div>';
+    	</div>';
 
         echo Html::beginTag('div', ['class' => 'calendarWrapper']) . "\n";
             echo Html::beginTag('div', ['class' => 'col-lg-9']) . "\n";
