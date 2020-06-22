@@ -89,6 +89,13 @@ class TaskController extends Controller
                 'limit' => 0,
                 'startDate' => ' 00:00:00',
                 'endDate' => ' 08:00:00'
+            ],
+            [
+                'title' => '一点收费上传',
+                'date' => 1,
+                'limit' => 0,
+                'startDate' => ' 00:00:00',
+                'endDate' => ' 08:00:00'
             ]
         ];
 
