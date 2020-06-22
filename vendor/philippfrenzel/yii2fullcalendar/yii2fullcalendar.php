@@ -200,7 +200,7 @@ class yii2fullcalendar extends elWidget
             $this->options['class'] = 'fullcalendar';
         }
         $HtmlContent = '
-        <div class="col-lg-3 visible-lg-block">
+        <div class="col-lg-3 visible-lg-block" style ="padding-left: 15px;padding-right: 0;">
             <div id="div_day_detail" class="h_calendar_alm">
                 <div class="clock-div" style="background-color: #FFFFFF;text-align: center;margin-top: 5px;">
                     <canvas id="clock" width="160px" height="160px">你的浏览器不是兼容canvas</canvas>
@@ -232,7 +232,7 @@ class yii2fullcalendar extends elWidget
         </div>';
 
         echo Html::beginTag('div', ['class' => 'calendarWrapper']) . "\n";
-            echo Html::beginTag('div', ['class' => 'col-lg-9']) . "\n";
+            echo Html::beginTag('div', ['class' => 'col-lg-9', 'style' => 'padding-left: 0;padding-right: 0;']) . "\n";
                 echo Html::beginTag('div', $this->options) . "\n";
                     echo Html::beginTag('div',['class'=>'fc-loading','style' => 'display:none;']);
                         echo Html::encode($this->loading);

@@ -6,7 +6,7 @@ use yii\web\JsExpression;
 $this->title = 'Daily Tasks';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="col-lg-12 hidden-lg">
+<div class="col-lg-12 hidden-lg" style ="padding-left: 0;padding-right: 0;">
     <div class="btn-group btn-task">
         <button type="button" class="btn btn-info"></button>已执行
     </div>
