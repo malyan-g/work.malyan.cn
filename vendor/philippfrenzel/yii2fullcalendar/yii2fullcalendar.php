@@ -239,7 +239,7 @@ class yii2fullcalendar extends elWidget
                     echo Html::endTag('div')."\n";
                 echo Html::endTag('div')."\n";
             echo Html::endTag('div')."\n";
-            echo $HtmlContent."\n";
+            //echo $HtmlContent."\n";
         echo Html::endTag('div')."\n";
         $this->registerPlugin();
     }
