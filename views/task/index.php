@@ -21,16 +21,6 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 </div>
 <?php
-$JSLoading = <<<EOF
-    function(bool){
-        if (bool){
-            $(".calendarWrapper").show();
-        }else{
-            $(".calendarWrapper").fadeOut();
-        }
-    }
-EOF;
-
 $JSDayClick = <<<EOF
     function(dayDate, allDay, jsEvent, view) {
         var dayDate = new Date(dayDate._d);
@@ -283,7 +273,6 @@ EOF;
         'displayEventTime' => true,
         'displayEventEnd' => true,
         'timeFormat' => 'HH:mm',
-        'loading' => new JsExpression($JSLoading),
         'dayClick' => new JsExpression($JSDayClick),
     ],
     //'themeSystem' => 'standard',
