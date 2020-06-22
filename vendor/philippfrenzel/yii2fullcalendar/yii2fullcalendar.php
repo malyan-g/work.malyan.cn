@@ -215,19 +215,19 @@ class yii2fullcalendar extends elWidget
                     <div class="alm_lunar_date"></div>
                 </div>
             </div>
-        </div>
-        <div class="task-group"">
-            <div class="btn-group btn-task">
-                <button type="button" class="btn btn-info"></button>已执行
-            </div>
-            <div class="btn-group btn-task">
-                <button type="button" class="btn btn-success"></button>正在执行
-            </div>
-            <div class="btn-group btn-task">
-                <button type="button" class="btn btn-danger"></button>即将执行
-            </div>
-            <div class="btn-group btn-task">
-                <button type="button" class="btn btn-warning"></button>未执行
+            <div class="task-group"">
+                <div class="btn-group btn-task">
+                    <button type="button" class="btn btn-info"></button>已执行
+                </div>
+                <div class="btn-group btn-task">
+                    <button type="button" class="btn btn-success"></button>正在执行
+                </div>
+                <div class="btn-group btn-task">
+                    <button type="button" class="btn btn-danger"></button>即将执行
+                </div>
+                <div class="btn-group btn-task">
+                    <button type="button" class="btn btn-warning"></button>未执行
+                </div>
             </div>
         </div>';
 
