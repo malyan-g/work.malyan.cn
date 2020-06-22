@@ -215,7 +215,7 @@ class yii2fullcalendar extends elWidget
                     <div class="alm_lunar_date"></div>
                 </div>
             </div>
-        <div>
+        </div>
         <div class="task-group"">
             <div class="btn-group btn-task">
                 <button type="button" class="btn btn-info"></button>已执行
@@ -239,7 +239,7 @@ class yii2fullcalendar extends elWidget
                     echo Html::endTag('div')."\n";
                 echo Html::endTag('div')."\n";
             echo Html::endTag('div')."\n";
-            //echo $HtmlContent."\n";
+            echo $HtmlContent."\n";
         echo Html::endTag('div')."\n";
         $this->registerPlugin();
     }
