@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
     'dataProvider' => $dataProvider,
     'pager'=>[
         'firstPageLabel'=>"&lt;",
-        'prevPageLabel'=>'&gt;',
+        'lastPageLabel'=>'&gt;',
     ],
     'columns' => [
         'id',
