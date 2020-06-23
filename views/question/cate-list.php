@@ -17,10 +17,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <?= GridView::widget([
     'dataProvider' => $dataProvider,
-    'pager'=>[
-        'firstPageLabel'=>"&lt;",
-        'lastPageLabel'=>'&gt;',
-    ],
     'columns' => [
         'id',
         'question_name',
