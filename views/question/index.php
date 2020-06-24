@@ -22,7 +22,7 @@ $count = count($data);
 ?>
 <?= $this->render('search', ['searchModel' => $searchModel]) ?>
 <P></P>
-<table class="c-table opr-toplist1-table col-lg-8">
+<table class="c-table opr-toplist1-table col-lg-6">
     <tbody>
     <tr>
         <td>
