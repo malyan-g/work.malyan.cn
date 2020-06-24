@@ -38,8 +38,8 @@ $count = count($data);
             <tr>
                 <td>
                     <span>
-                        <span class="c-index  c-index-hot<?= $key < 3 ?$key+1 : '' ?> c-gap-icon-right-small"><?= $key+1 ?></span>
-                        <a href="<?= Url::toRoute(array_merge($routeData, ['QuestionSearch[cate_id]' => $value['cate_id']]))?>" class="opr-toplist1-cut question-modal" target="_blank"><?= Html::encode($value['cate']['question_name']) ?></a>
+                        <span class="c-index  c-index-hot<?= $key < 3 ?$key+1 : '' ?>"><?= $key+1 ?></span>
+                        <a href="<?= Url::toRoute(array_merge($routeData, ['QuestionSearch[cate_id]' => $value['cate_id']]))?>" class="opr-toplist1-cut" target="_blank"><?= Html::encode($value['cate']['question_name']) ?></a>
                     </span>
                 </td>
                 <td class="opr-toplist1-right opr-toplist1-right-hot">

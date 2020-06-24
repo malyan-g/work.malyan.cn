@@ -169,7 +169,7 @@ table, img {
 }
 
 .opr-toplist1-cut {
-    white-space: nowrap;
+    /*white-space: nowrap;*/
     text-overflow: ellipsis;
     overflow: hidden;
     vertical-align: middle;
@@ -178,7 +178,7 @@ table, img {
 
 .opr-toplist1-table .opr-toplist1-right {
     text-align: right;
-    white-space: nowrap;
+    /*white-space: nowrap;*/
 }
 
 .c-table td {
